@@ -42,8 +42,14 @@
                     <td>{{ $armada->rating }}</td>
                     <td>
                     <a href="{{ url('/dashboard/armada/show', $armada->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
-                    <a href="#" class="btn btn-warning"><i class="bx bx-edit"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="ri-delete-bin-5-line"></i></a>
+                    <a href="{{ url('/dashboard/armada/edit', $armada->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
+                    <form action="{{ url('dashboard/armada/destroy', $armada->id) }}" method="post">
+                      @csrf
+                      @method('delete')
+                      <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data {{ $armada->merk }}?')">
+                        <i class="ri-delete-bin-5-line"></i>
+                      </button>
+                    </form>
                     </td>
                   </tr>
                 @endforeach

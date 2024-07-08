@@ -2,7 +2,7 @@
     <x-slot name="page_name">Jenis Kendaraan</x-slot>
 
     <x-slot name="navbar">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
     <li class="breadcrumb-item active">Jenis Kendaraan</li>
     </x-slot>
 
@@ -17,7 +17,6 @@
               <p>Jelajahi berbagai pilihan kendaraan yang kami tawarkan. Mulai dari mobil untuk perjalanan singkat hingga bus yang nyaman untuk perjalanan grup besar.
               </p>
               <a href="{{ url('/dashboard/jenis_kendaraan/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
-
               <!-- Table with stripped rows -->
               <table class="table datable">
                 <thead>
@@ -36,8 +35,14 @@
                     <td>{{ $jk->deskripsi }}</td>
                     <td>
                     <a href="{{ url('/dashboard/jenis_kendaraan/show', $jk->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
-                    <a href="#" class="btn btn-warning"><i class="bx bx-edit"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="ri-delete-bin-5-line"></i></a>
+                    <a href="{{ url('/dashboard/jenis_kendaraan/edit', $jk->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
+                    <form action="{{ url('dashboard/jenis_kendaraan/destroy', $jk->id) }}" method="post">
+                      @csrf
+                      @method('delete')
+                      <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data {{ $jk->nama }}?')">
+                        <i class="ri-delete-bin-5-line"></i>
+                      </button>
+                    </form>
                     </td>
                   </tr>
                   @endforeach

@@ -19,4 +19,10 @@ class Peminjaman extends Model
         'status_pinjam',
         'armada_id'
     ];
+
+    public $timestamps = false;
+
+    public function Armada(){
+        return $this->belongsTo(Armada::class);
+    }
 }

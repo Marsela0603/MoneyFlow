@@ -33,4 +33,32 @@ class JKController extends Controller
         $jenis_kendaraan = jenis_kendaraan::find($id);
         return view('admin.jenis_kendaraan.show', compact('jenis_kendaraan'));
     }
+
+    public function edit(string $id)
+    {
+        $jenis_kendaraan = jenis_kendaraan::find($id);
+        return view('admin.jenis_kendaraan.edit', compact('jenis_kendaraan'));
+    }
+
+    public function update(Request $request, string $id)
+    {
+         // validasi form input
+         $validated = $request->validate([
+            'nama' => 'required|string',
+            'deskripsi' => 'required|string'
+        ]);
+
+        $jenis_kendaraan = jenis_kendaraan::find($id);
+        $jenis_kendaraan->update($validated);
+
+        return redirect('dashboard/jenis_kendaraan')->with('pesan', 'Data Berhasil Diperbarui');
+    }
+
+    public function destroy(string $id)
+    {
+        $jenis_kendaraan = jenis_kendaraan::find($id);
+        $jenis_kendaraan->delete();
+
+        return redirect('dashboard/jenis_kendaraan')->with('pesan', 'Data Berhasil Dihapus');
+    }
 }

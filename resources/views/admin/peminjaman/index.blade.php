@@ -16,6 +16,7 @@
               <h5 class="card-title">Tabel Peminjaman</h5>
               <p>Kelola dan pantau semua transaksi peminjaman dengan mudah. Pastikan setiap pemesanan berjalan lancar.
               </p>
+              <a href="{{ url('/dashboard/peminjaman/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -23,13 +24,11 @@
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>NIK</th>
-                    <th>Keperluan Pinjam</th>
                     <th>Mulai</th>
                     <th>Selesai</th>
                     <th>Komentar</th>
                     <th>Status</th>
-                    <th>Armada id</th>
+                    <th>Armada</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -38,14 +37,22 @@
                   <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $peminjaman->nama_peminjam }}</td>
-                    <td>{{ $peminjaman->ktp_peminjam }}</td>
-                    <td>{{ $peminjaman->keperluan_pinjam }}</td>
                     <td>{{ $peminjaman->mulai }}</td>
                     <td>{{ $peminjaman->selesai }}</td>
                     <td>{{ $peminjaman->komentar_peminjam }}</td>
                     <td>{{ $peminjaman->status_pinjam }}</td>
-                    <td>{{ $peminjaman->nama_peminjam }}</td>
-                    <th>{{ $peminjaman->armada_id }}</th>
+                    <td>{{ $peminjaman->armada->merk }}</td>
+                    <td>
+                    <a href="{{ url('/dashboard/peminjaman/show', $peminjaman->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                    <a href="{{ url('/dashboard/peminjaman/edit', $peminjaman->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
+                    <form action="{{ url('dashboard/peminjaman/destroy', $peminjaman->id) }}" method="post">
+                      @csrf
+                      @method('delete')
+                      <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data {{ $peminjaman->nama_peminjaman }}?')">
+                        <i class="ri-delete-bin-5-line"></i>
+                      </button>
+                    </form>
+                    </td>
                   </tr>
                 @endforeach
                 </tbody>

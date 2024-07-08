@@ -62,10 +62,13 @@
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
           <i class="bi bi-box-arrow-right"></i>
-          <span>Logout</span>
+          <span>{{ __('Logout') }}</span>
         </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+        </form>
       </li><!-- End Login Page Nav -->
 
       <!-- End Blank Page Nav -->

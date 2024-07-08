@@ -14,4 +14,10 @@ class Pembayaran extends Model
         'jumlah_bayar',
         'peminjaman_id'
     ];
+
+    public $timestamps = false;
+
+    public function Peminjaman(){
+        return $this->belongsTo(Peminjaman::class);
+    }
 }

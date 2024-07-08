@@ -16,7 +16,7 @@
               <h5 class="card-title">Tabel Pembayaran</h5>
               <p>Lihat semua transaksi pembayaran yang telah dilakukan untuk memastikan transparansi dan akuntabilitas
               </p>
-              <a href="/dashboard/pembayaran/create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
+              <a href="{{ url('/dashboard/pembayaran/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -25,7 +25,6 @@
                     <th>No</th>
                     <th>Tanggal</th>
                     <th>Jumlah Bayar</th>
-                    <th>Peminjaman_id</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -35,11 +34,16 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $pembayaran->tanggal }}</td>
                     <td>{{ $pembayaran->jumlah_bayar }}</td>
-                    <td>{{ $pembayaran->peminjaman_id }}</td>
                     <td>
-                        <a href="#" class="btn btn-info">Lihat</a>
-                        <a href="#" class="btn btn-warning">Edit</a>
-                        <a href="#" class="btn btn-danger">Hapus</a>
+                    <a href="{{ url('/dashboard/pembayaran/show', $pembayaran->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                    <a href="{{ url('/dashboard/pembayaran/edit', $pembayaran->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
+                    <form action="{{ url('dashboard/pembayaran/destroy', $pembayaran->id) }}" method="post">
+                      @csrf
+                      @method('delete')
+                      <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data pembayaran pada {{ $pembayaran->tanggal }}?')">
+                        <i class="ri-delete-bin-5-line"></i>
+                      </button>
+                    </form>
                     </td>
                   </tr>
                 @endforeach
