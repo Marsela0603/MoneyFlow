@@ -2,6 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JKController;
+use App\Http\Controllers\ArmadaController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\ProfilController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,15 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\JKController;
-use App\Http\Controllers\ArmadaController;
-use App\Http\Controllers\PembayaranController;
-use App\Http\Controllers\PeminjamanController;
-use App\Http\Controllers\ProfilController;
 
 
 
@@ -79,3 +78,7 @@ Route::get('/dashboard/pembayaran/edit/{id}', [PembayaranController::class, 'edi
 Route::put('/dashboard/pembayaran/update/{id}', [PembayaranController::class, 'update']);
 Route::delete('/dashboard/pembayaran/destroy/{id}', [PembayaranController::class, 'destroy']);
 });
+
+
+require __DIR__.'/auth.php';
+

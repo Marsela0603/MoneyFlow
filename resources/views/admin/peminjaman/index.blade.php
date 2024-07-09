@@ -1,3 +1,4 @@
+@use(App\Models\User)
 <x-layout>
     <x-slot name="page_name">Peminjaman</x-slot>
 
@@ -16,6 +17,13 @@
               <h5 class="card-title">Tabel Peminjaman</h5>
               <p>Kelola dan pantau semua transaksi peminjaman dengan mudah. Pastikan setiap pemesanan berjalan lancar.
               </p>
+              @if (session('pesan'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                {{ session('pesan') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @endif
               <a href="{{ url('/dashboard/peminjaman/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
 
               <!-- Table with stripped rows -->
@@ -44,6 +52,8 @@
                     <td>{{ $peminjaman->armada->merk }}</td>
                     <td>
                     <a href="{{ url('/dashboard/peminjaman/show', $peminjaman->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                    @auth
+                    @if (Auth::user()->role == User::ROLE_ADMIN)
                     <a href="{{ url('/dashboard/peminjaman/edit', $peminjaman->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
                     <form action="{{ url('dashboard/peminjaman/destroy', $peminjaman->id) }}" method="post">
                       @csrf
@@ -52,6 +62,8 @@
                         <i class="ri-delete-bin-5-line"></i>
                       </button>
                     </form>
+                    @endif
+                    @endauth
                     </td>
                   </tr>
                 @endforeach

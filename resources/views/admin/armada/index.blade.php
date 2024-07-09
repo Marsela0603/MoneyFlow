@@ -1,3 +1,4 @@
+@use(App\Models\User)
 <x-layout>
     <x-slot name="page_name">Armada</x-slot>
 
@@ -16,6 +17,13 @@
               <h5 class="card-title">Tabel Armada</h5>
               <p>Kami memiliki berbagai armada berkualitas yang siap untuk disewakan. Setiap armada kami dijaga dengan baik untuk memastikan kenyamanan dan keselamatan Anda.
               </p>
+              @if (session('pesan'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                {{ session('pesan') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @endif
               <a href="{{ url('/dashboard/armada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
 
               <!-- Table with stripped rows -->
@@ -42,6 +50,8 @@
                     <td>{{ $armada->rating }}</td>
                     <td>
                     <a href="{{ url('/dashboard/armada/show', $armada->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                    @auth
+                    @if (Auth::user()->role == User::ROLE_ADMIN)
                     <a href="{{ url('/dashboard/armada/edit', $armada->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
                     <form action="{{ url('dashboard/armada/destroy', $armada->id) }}" method="post">
                       @csrf
@@ -50,6 +60,8 @@
                         <i class="ri-delete-bin-5-line"></i>
                       </button>
                     </form>
+                    @endif
+                    @endauth
                     </td>
                   </tr>
                 @endforeach
