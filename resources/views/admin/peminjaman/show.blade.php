@@ -1,9 +1,10 @@
+@use(App\Models\User)
 <x-layout>
     <x-slot name="page_name">Peminjaman</x-slot>
 
     <x-slot name="navbar">
     <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-    <li class="breadcrumb-item active"><a href="/dashboard/jenis_kendaraan">Peminjaman</a></li>
+    <li class="breadcrumb-item active"><a href="/dashboard/peminjaman">Peminjaman</a></li>
     <li class="breadcrumb-item active">{{ $peminjaman->nama_peminjam }}</li>
     </x-slot>
 
@@ -25,7 +26,11 @@
                     <th>No</th>
                     <th>ID</th>
                     <th>Nama</th>
+                    @auth
+                    @if (Auth::user()->role == User::ROLE_ADMIN)
                     <th>NIK</th>
+                    @endif
+                    @endauth
                     <th>Keperluan Pinjam</th>
                     <th>Mulai</th>
                     <th>Selesai</th>
@@ -39,7 +44,11 @@
                     <td>1</td>
                     <td>{{ $peminjaman->id }}</td>
                     <td>{{ $peminjaman->nama_peminjam }}</td>
+                    @auth
+                    @if (Auth::user()->role == User::ROLE_ADMIN)
                     <td>{{ $peminjaman->ktp_peminjam }}</td>
+                    @endif
+                    @endauth
                     <td>{{ $peminjaman->keperluan_pinjam }}</td>
                     <td>{{ $peminjaman->mulai }}</td>
                     <td>{{ $peminjaman->selesai }}</td>

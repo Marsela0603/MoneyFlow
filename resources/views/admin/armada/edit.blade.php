@@ -3,7 +3,7 @@
 
     <x-slot name="navbar">
         <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-        <li class="breadcrumb-item"><a href="/dashboard/jenis_kendaraan">Armada</a></li>
+        <li class="breadcrumb-item"><a href="/dashboard/armada">Armada</a></li>
         <li class="breadcrumb-item active">Edit Form Armada</li>
     </x-slot>
 

@@ -12,73 +12,95 @@ use App\Http\Controllers\ProfilController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('index');
-})->middleware(['auth', 'verified'])->name('index');
+Route::get('/portofolio-bus', function () {
+    return view('landingpage.portofolio-bus');
+});
+
+Route::get('/portofolio-minibus', function () {
+    return view('landingpage.portofolio-minibus');
+});
+
+Route::get('/portofolio-mobil', function () {
+    return view('landingpage.portofolio-mobil');
+});
+
+
+// Route::get('/dashboard', function () {
+//     return view('admin.index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::prefix('/dashboard')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/contact', [ContactController::class, 'index']);
+        Route::get('/profil', [ProfilController::class, 'index']);
+
+        // Jenis Kendaraan
+        Route::prefix('/jenis_kendaraan')->group(function () { 
+            Route::get('/', [JKController::class, 'index']);
+            Route::get('/show/{id}', [JKController::class, 'show']);
+            //hanya untuk admin
+            Route::middleware('admin')->group(function () {
+            Route::get('/create', [JKController::class, 'create']);
+            Route::post('/store', [JKController::class, 'store']);
+            Route::get('/edit/{id}', [JKController::class, 'edit']);
+            Route::put('/update/{id}', [JKController::class, 'update']);
+            Route::delete('/destroy/{id}', [JKController::class, 'destroy']);
+            });
+        });
+
+        // Armada
+        Route::prefix('/armada')->group(function () { 
+            Route::get('/', [ArmadaController::class, 'index']);
+            Route::get('/show/{id}', [ArmadaController::class, 'show']);
+            //hanya untuk admin
+            Route::middleware('admin')->group(function () {
+            Route::get('/create', [ArmadaController::class, 'create']);
+            Route::post('/store', [ArmadaController::class, 'store']);
+            Route::get('/edit/{id}', [ArmadaController::class, 'edit']);
+            Route::put('/update/{id}', [ArmadaController::class, 'update']);
+            Route::delete('/destroy/{id}', [ArmadaController::class, 'destroy']);
+            });
+        });
+
+        // Peminjaman
+        Route::prefix('/peminjaman')->group(function () { 
+            Route::get('/', [PeminjamanController::class, 'index']);
+            Route::get('/show/{id}', [PeminjamanController::class, 'show']);
+            Route::get('/create', [PeminjamanController::class, 'create']);
+            //hanya untuk admin
+            Route::middleware('admin')->group(function () {
+            Route::post('/store', [PeminjamanController::class, 'store']);
+            Route::get('/edit/{id}', [PeminjamanController::class, 'edit']);
+            Route::put('/update/{id}', [PeminjamanController::class, 'update']);
+            Route::delete('/destroy/{id}', [PeminjamanController::class, 'destroy']);
+            });
+        });
+
+         // Pembayaran
+         Route::prefix('/pembayaran')->group(function () { 
+            Route::get('/', [PembayaranController::class, 'index']);
+            Route::get('/show/{id}', [PembayaranController::class, 'show']);
+            //hanya untuk admin
+            Route::middleware('admin')->group(function () {
+            Route::get('/create', [PembayaranController::class, 'create']);
+            Route::post('/store', [PembayaranController::class, 'store']);
+            Route::get('/edit/{id}', [PembayaranController::class, 'edit']);
+            Route::put('/update/{id}', [PembayaranController::class, 'update']);
+            Route::delete('/destroy/{id}', [PembayaranController::class, 'destroy']);
+            });
+        });
+
+        
+    });
 });
-
-
-
-
-// DASHBOARD
-Route::middleware('auth')->group(function(){
-    Route::get('/dashboard', [AdminController::class, 'index']);
-    Route::get('/contact', [ContactController::class, 'index']);
-    Route::get('/profile', [ProfilController::class, 'index']);
-});
-
-// jenis kendaraan
-Route::middleware('auth')->group(function(){
-    Route::get('/dashboard/jenis_kendaraan', [JKController::class, 'index']);
-    Route::get('/dashboard/jenis_kendaraan/create', [JKController::class, 'create']);
-    Route::post('/dashboard/jenis_kendaraan/store', [JKController::class, 'store']);
-    Route::get('/dashboard/jenis_kendaraan/show/{id}', [JKController::class, 'show']);
-    Route::get('/dashboard/jenis_kendaraan/edit/{id}', [JKController::class, 'edit']);
-    Route::put('/dashboard/jenis_kendaraan/update/{id}', [JKController::class, 'update']);
-    Route::delete('/dashboard/jenis_kendaraan/destroy/{id}', [JkController::class, 'destroy']);
-});
-
-// armada
-Route::middleware('auth')->group(function(){
-    Route::get('/dashboard/armada', [ArmadaController::class, 'index']);
-    Route::get('/dashboard/armada/create', [ArmadaController::class, 'create']);
-    Route::post('/dashboard/armada/store', [ArmadaController::class, 'store']);
-    Route::get('/dashboard/armada/show/{id}', [ArmadaController::class, 'show']);
-    Route::get('/dashboard/armada/edit/{id}', [ArmadaController::class, 'edit']);
-    Route::put('/dashboard/armada/update/{id}', [ArmadaController::class, 'update']);
-    Route::delete('/dashboard/armada/destroy/{id}', [ArmadaController::class, 'destroy']);
-});
-
-// peminjaman
-Route::middleware('auth')->group(function(){
-    Route::get('/dashboard/peminjaman', [PeminjamanController::class, 'index']);
-    Route::get('/dashboard/peminjaman/create', [PeminjamanController::class, 'create']);
-    Route::post('/dashboard/peminjaman/store', [PeminjamanController::class, 'store']);
-    Route::get('/dashboard/peminjaman/show/{id}', [PeminjamanController::class, 'show']);
-    Route::get('/dashboard/peminjaman/edit/{id}', [PeminjamanController::class, 'edit']);
-    Route::put('/dashboard/peminjaman/update/{id}', [PeminjamanController::class, 'update']);
-    Route::delete('/dashboard/peminjaman/destroy/{id}', [PeminjamanController::class, 'destroy']);
-});
-
-// pembayaran
-Route::middleware('auth')->group(function(){
-Route::get('/dashboard/pembayaran', [PembayaranController::class, 'index']);
-Route::get('/dashboard/pembayaran/create', [PembayaranController::class, 'create']);
-Route::post('/dashboard/pembayaran/store', [PembayaranController::class, 'store']);
-Route::get('/dashboard/pembayaran/show/{id}', [PembayaranController::class, 'show']);
-Route::get('/dashboard/pembayaran/edit/{id}', [PembayaranController::class, 'edit']);
-Route::put('/dashboard/pembayaran/update/{id}', [PembayaranController::class, 'update']);
-Route::delete('/dashboard/pembayaran/destroy/{id}', [PembayaranController::class, 'destroy']);
-});
-
 
 require __DIR__.'/auth.php';
 

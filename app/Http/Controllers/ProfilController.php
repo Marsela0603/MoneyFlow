@@ -8,6 +8,6 @@ use App\Models\User;
 class ProfilController extends Controller
 {
     public function index(){
-        return view('admin.profile');   
+        return view('admin.profil');   
     }
 }

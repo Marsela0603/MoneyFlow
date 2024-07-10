@@ -2,7 +2,7 @@
     <x-slot name="page_name">Dashboard</x-slot>
 
     <x-slot name="navbar">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
     </x-slot>
 
     <x-slot name="page_content">

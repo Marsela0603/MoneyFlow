@@ -10,7 +10,7 @@
 
   <!-- Favicons -->
   <link href="{{asset('welcome/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('welcome/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
-  <link href="{{asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-  <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcome/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcome/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('welcome/vendor/aos/aos.css" rel="stylesheet')}}">
+  <link href="{{asset('welcome/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcome/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="{{asset('css/main.css')}}" rel="stylesheet">
+  <link href="{{asset('welcome/css/main.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: BizLand
@@ -58,7 +58,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">Velocar</h1>
@@ -73,8 +73,16 @@
             <li><a href="#portfolio">Galeri Kami</a></li>
             <li><a href="#team">Tim</a></li> 
             <li><a href="#contact">Kontak</a></li>
-            <a href="#about" class="btn-login">Login</a>
-            <a href="#about" class="btn-daftar">Register</a>
+            @if (Route::has('login'))
+            @auth
+            <a href="{{ url('/dashboard') }}" class="btn-login">Dashboard</a>
+            @else
+            <a href="{{ route('login') }}" class="btn-login">Login</a>
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}t" class="btn-daftar">Register</a>
+            @endif
+            @endauth
+            @endif
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -120,7 +128,7 @@
         <div class="row gy-3">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/rental.jpg" alt="" class="img-fluid">
+            <img src="{{asset('welcome/img/rental.jpg')}}" alt="" class="img-fluid">
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -271,16 +279,16 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{{asset('img/clients/HONDA.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/HYUNDAI.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/ISUZU.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/JEEP.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/MITSUBISHI.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/DAIHATSU.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/suzuki.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/toyota.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/LEXUS.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/MAZDA.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/HONDA.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/HYUNDAI.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/ISUZU.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/JEEP.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/MITSUBISHI.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/DAIHATSU.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/suzuki.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/toyota.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/LEXUS.png')}}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/MAZDA.png')}}" class="img-fluid" alt=""></div>
           </div>
         </div>
 
@@ -350,7 +358,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
 
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+      <img src="{{asset('welcome/img/testimonials-bg.jpg')}}" class="testimonials-bg" alt="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -374,7 +382,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.JPG" class="testimonial-img" alt="">
+                <img src="{{asset('welcome/img/testimonials/testimonials-1.JPG')}}" class="testimonial-img" alt="">
                 <h3>Rossa</h3>
                 <h4>Pelanggan</h4>
                 <div class="stars">
@@ -390,7 +398,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img" alt="">
+                <img src="{{asset('welcome/img/testimonials/testimonials-2.png')}}" class="testimonial-img" alt="">
                 <h3>Indah</h3>
                 <h4>Pelanggan</h4>
                 <div class="stars">
@@ -406,7 +414,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.JPG" class="testimonial-img" alt="">
+                <img src="{{asset('welcome/img/testimonials/testimonials-3.JPG')}}" class="testimonial-img" alt="">
                 <h3>Haris</h3>
                 <h4>Pelanggan</h4>
                 <div class="stars">
@@ -422,7 +430,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.JPG" class="testimonial-img" alt="">
+                <img src="{{asset('welcome/img/testimonials/testimonials-4.JPG')}}" class="testimonial-img" alt="">
                 <h3>Rizky</h3>
                 <h4>Pelanggan</h4>
                 <div class="stars">
@@ -438,7 +446,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.png" class="testimonial-img" alt="">
+                <img src="{{asset('welcome/img/testimonials/testimonials-5.png')}}" class="testimonial-img" alt="">
                 <h3>Hendri</h3>
                 <h4>Pelanggan</h4>
                 <div class="stars">
@@ -487,72 +495,72 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Bus-1.png" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Bus-1.png')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Bus 1</h4>
                 <p>Bus 45 Seat</p>
-                <a href="assets/img/portfolio/Bus-1.png" title="Bus 45 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Bus-1.png')}}" title="Bus 45 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-bus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Minibus-1.png" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Minibus-1.png')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Minibus 1</h4>
                 <p>Hiace</p>
-                <a href="assets/img/portfolio/Minibus-1.png" title="Hiace" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portofolio-minibus.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Minibus-1.png')}}" title="Hiace" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-minibus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Mobil-1.webp" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Mobil-1.webp')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Mobil 1</h4>
                 <p>Lexus NX 300</p>
-                <a href="assets/img/portfolio/Mobil-1.webp" title="Lexus NX 300" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portofolio-mobil.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Mobil-1.webp')}}" title="Lexus NX 300" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-mobil" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Bus-2.png" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Bus-2.png')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Bus 2</h4>
                 <p>Bus 30 Seat</p>
-                <a href="assets/img/portfolio/Bus-2.png" title="Bus 30 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Bus-2.png')}}" title="Bus 30 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-bus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Minibus-2.png" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Minibus-2.png')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Minibus 2</h4>
                 <p>Elf Short</p>
-                <a href="assets/img/portfolio/Minibus-2.png" title="Elf Short" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portofolio-minibus.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Minibus-2.png')}}" title="Elf Short" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-minibus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
             <div class="portfolio-content h-100">
-              <img src="assets/img/portfolio/Mobil-2.webp" class="img-fluid" alt="">
+              <img src="{{asset('welcome/img/portfolio/Mobil-2.webp')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Mobil 2</h4>
                 <p>Toyota Fortuner</p>
-                <a href="assets/img/portfolio/Mobil-2.webp" title="Toyota Fortuner" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portofolio-mobil.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{asset('welcome/img/portfolio/Mobil-2.webp')}}" title="Toyota Fortuner" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/portofolio-mobil" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
@@ -586,7 +594,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.JPEG" class="img-fluid" alt="">
+                <img src="{{asset('welcome/img/team/team-1.JPEG')}}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -604,7 +612,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <img src="{{asset('welcome/img/team/team-2.jpg')}}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -622,7 +630,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.JPG" class="img-fluid" alt="">
+                <img src="{{asset('welcome/img/team/team-3.JPG')}}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -640,7 +648,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <img src="{{asset('welcome/img/team/team-4.jpg')}}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -703,7 +711,7 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3175618529776!2d106.83004867355626!3d-6.352919162148884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec6b07b68ea5%3A0x17da46bdf9308386!2sSTT%20Terpadu%20Nurul%20Fikri%20-%20Kampus%20B!5e0!3m2!1sid!2sid!4v1720531853877!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
@@ -713,22 +721,22 @@
 
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Nama</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <input type="text" name="name" id="name-field" class="form-control" placeholder="Masukkan nama anda" required="">
                 </div>
 
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <input type="email" class="form-control" name="email" id="email-field" placeholder="Masukkan email anda" required="">
                 </div>
 
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <input type="text" class="form-control" name="subject" id="subject-field" placeholder="Masukkan subjek" required="">
                 </div>
 
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Pesan</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" placeholder="Masukkan pesan" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -773,7 +781,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
+          <a href="/" class="d-flex align-items-center">
             <span class="sitename">Velocar</span>
           </a>
           <div class="footer-contact pt-3">
@@ -787,9 +795,9 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Beranda</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Tentang Kami</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Pelayanan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#aboutus">Tentang Kami</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Pelayanan</a></li>
           </ul>
         </div>
 
@@ -822,7 +830,7 @@
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Disain Oleh <a href="https://bootstrapmade.com/">Tim Velocar</a>
+        Desain Oleh <a href="#">Tim Velocar</a>
       </div>
     </div>
 
@@ -840,18 +848,18 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{asset('welcome/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('welcome/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('welcome/vendor/aos/aos.js')}}"></script>
+  <script src="{{asset('welcome/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{asset('welcome/vendor/waypoints/noframework.waypoints.js')}}"></script>
+  <script src="{{asset('welcome/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{asset('welcome/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{asset('welcome/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+  <script src="{{asset('welcome/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset('welcome/js/main.js')}}"></script>
 
 </body>
 
