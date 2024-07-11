@@ -43,6 +43,7 @@
                     <td>{{ $pembayaran->tanggal }}</td>
                     <td>{{ $pembayaran->jumlah_bayar }}</td>
                     <td>
+                    <div class="btn-group" role="group" aria-label="Actions">
                     <a href="{{ url('/dashboard/pembayaran/show', $pembayaran->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                     @auth
                     @if (Auth::user()->role == User::ROLE_ADMIN)
@@ -56,6 +57,7 @@
                     </form>
                     @endif
                     @endauth
+                    </div>
                     </td>
                   </tr>
                 @endforeach

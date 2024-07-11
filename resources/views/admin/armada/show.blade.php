@@ -32,6 +32,7 @@
                     <th>Kapasitas Kursi</th>
                     <th>Biaya</th>
                     <th>Rating</th>
+                    <th>Gambar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,13 @@
                     <td>{{ $armada->kapasitas_kursi }}</td>
                     <td>{{ $armada->biaya }}</td>
                     <td>{{ $armada->rating }}</td>
+                    <td>
+                        @if ($armada->gambar)
+                        <img src="{{ Storage::url($armada->gambar) }}" width="150px" alt="Gambar Armada">
+                        @else
+                        <span>Tidak Ada Gambar</span>
+                        @endif
+                    </td>
                   </tr>
                 </tbody>
               </table>

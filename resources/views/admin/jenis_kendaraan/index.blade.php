@@ -42,6 +42,7 @@
                     <td>{{ $jk->nama }}</td>
                     <td>{{ $jk->deskripsi }}</td>
                     <td>
+                    <div class="btn-group" role="group" aria-label="Actions">
                     <a href="{{ url('/dashboard/jenis_kendaraan/show', $jk->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                     @auth
                     @if (Auth::user()->role == User::ROLE_ADMIN)
@@ -55,6 +56,7 @@
                     </form>
                     @endif
                     @endauth
+</div>
                     </td>
                   </tr>
                   @endforeach

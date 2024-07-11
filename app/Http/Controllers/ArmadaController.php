@@ -31,7 +31,7 @@ class ArmadaController extends Controller
             'rating' => 'required|string|min:1|max:5',
             'biaya' => 'required|string',
             'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id',
-            'gambar' => 'required|image|max:2048'
+            'gambar' => 'nullable|mimes:jpeg,jpg,png|max:5120'
         ]);
 
         //menyimpan gambar
@@ -67,7 +67,7 @@ class ArmadaController extends Controller
             'rating' => 'required|string|min:1|max:5',
             'biaya' => 'required|string',
             'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id',
-            'gambar' => 'nullable|image|max:2048'
+            'gambar' => 'nullable|mimes:jpeg,jpg,png|max:5120'
         ]);
 
         $armada = Armada::find($id);

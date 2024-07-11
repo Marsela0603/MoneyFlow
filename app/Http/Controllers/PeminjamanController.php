@@ -27,7 +27,7 @@ class PeminjamanController extends Controller
             'keperluan_pinjam' => 'required|string',
             'mulai' => 'required|date',
             'selesai' => 'required|date',
-            'komentar_peminjam' => 'required|string',
+            'komentar_peminjam' => 'nullable|string',
             'armada_id' => 'required|exists:armada,id'
         ]);
 
@@ -60,7 +60,7 @@ class PeminjamanController extends Controller
             'keperluan_pinjam' => 'required|string',
             'mulai' => 'required|date',
             'selesai' => 'required|date',
-            'komentar_peminjam' => 'required|string',
+            'komentar_peminjam' => 'nullable|string',
             'armada_id' => 'required|exists:armada,id',
             'status_pinjam' => 'required|string',
         ]);
