@@ -96,11 +96,11 @@
   <main class="main">
     <div class="page-title" data-aos="fade">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Detail Produk</h1>
+        <h1 class="mb-2 mb-lg-0">Detail Kendaraan</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Beranda</a></li>
-            <li class="current">Detail Produk</li>
+            <li class="current">Detail Kendaraan</li>
           </ol>
         </nav>
       </div>
@@ -139,7 +139,7 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Informasi Produk</h3>
+              <h3>Informasi Kendaraan</h3>
               <ul>
                 <li><strong>Armada</strong>: {{ $armada->merk }}</li>
                 <li><strong>Jenis Kendaraan</strong>: {{ $armada->jenis_kendaraan->nama }}</li>
@@ -151,7 +151,7 @@
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Deskripsi Produk</h2>
+              <h2>Deskripsi Kendaraan</h2>
               <p>{{ $armada->deskripsi }}</p>
             </div>
           </div>
