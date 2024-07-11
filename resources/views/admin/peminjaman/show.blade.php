@@ -54,7 +54,7 @@
                     <td class="text-center">{{ $peminjaman->selesai }}</td>
                     <td class="text-center">{{ $peminjaman->komentar_peminjam }}</td>
                     <td class="text-center">
-                    ````@if ($peminjaman->status_pinjam == 'Berhasil diajukan')
+                        @if ($peminjaman->status_pinjam == 'Berhasil diajukan')
                             <span class="badge bg-success">Berhasil diajukan</span>
                         @elseif ($peminjaman->status_pinjam == 'Sedang diajukan')
                             <span class="badge bg-warning text-dark">Sedang diajukan</span>
