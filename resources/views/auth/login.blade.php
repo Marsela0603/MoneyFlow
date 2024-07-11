@@ -57,8 +57,13 @@
 
               <div class="card mb-3">
 
+              
                 <div class="card-body">
-
+                <div class="pt-3 pb-0"> 
+                <a class="nav-link collapsed" href="/">
+                  <i class="ri-arrow-left-line"></i>
+                </a>
+                </div>
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login ke Akun Anda</h5>
                     <p class="text-center small">Masukkan email dan password untuk login</p>
