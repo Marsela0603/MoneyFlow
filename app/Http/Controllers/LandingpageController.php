@@ -11,7 +11,7 @@ class LandingpageController extends Controller
 {
     public function index(){
         $armadas = Armada::with('jenis_kendaraan')->get();
-        return view('landingpage.index');   
+        return view('landingpage.index', compact('armadas'));   
     }
 
     public function create(){
@@ -37,4 +37,12 @@ class LandingpageController extends Controller
         Peminjaman::create($validated);
         return redirect('/peminjaman/')->with('pesan', 'Data Berhasil Ditambah');
     }
+
+    public function show(string $id)
+    {
+        $armada = Armada::with('jenis_kendaraan')->find($id);
+        return view('landingpage.show', compact('armada'));
+    }
+
+
 }

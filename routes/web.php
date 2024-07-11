@@ -13,6 +13,7 @@ use App\Http\Controllers\LandingpageController;
 
 
 Route::get('/', [LandingpageController::class, 'index']);
+Route::get('/detail-kendaraan/{id}', [LandingpageController::class, 'show']);
 Route::get('/peminjaman', [LandingpageController::class, 'create']);
 
 // login untuk melakukan peminjaman

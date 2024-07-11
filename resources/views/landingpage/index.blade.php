@@ -482,99 +482,32 @@
     </div><!-- End Section Title -->
 
     <div class="container">
-
-      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
         <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">Bus</li>
-          <li data-filter=".filter-product">Minibus</li>
-          <li data-filter=".filter-branding">Mobil</li>
+            <li data-filter="*" class="filter-active">All</li>
+            @foreach($armadas->unique('jenis_kendaraan_id') as $armada)
+                <li data-filter=".filter-{{ strtolower($armada->jenis_kendaraan->nama) }}">{{ $armada->jenis_kendaraan->nama }}</li>
+            @endforeach
         </ul><!-- End Portfolio Filters -->
 
         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Bus-1.png')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Bus 1</h4>
-                <p>Bus 45 Seat</p>
-                <a href="{{asset('welcome/img/portfolio/Bus-1.png')}}" title="Bus 45 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-bus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Minibus-1.png')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Minibus 1</h4>
-                <p>Hiace</p>
-                <a href="{{asset('welcome/img/portfolio/Minibus-1.png')}}" title="Hiace" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-minibus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Mobil-1.webp')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Mobil 1</h4>
-                <p>Lexus NX 300</p>
-                <a href="{{asset('welcome/img/portfolio/Mobil-1.webp')}}" title="Lexus NX 300" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-mobil" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Bus-2.png')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Bus 2</h4>
-                <p>Bus 30 Seat</p>
-                <a href="{{asset('welcome/img/portfolio/Bus-2.png')}}" title="Bus 30 Seat" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-bus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Minibus-2.png')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Minibus 2</h4>
-                <p>Elf Short</p>
-                <a href="{{asset('welcome/img/portfolio/Minibus-2.png')}}" title="Elf Short" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-minibus" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-content h-100">
-              <img src="{{asset('welcome/img/portfolio/Mobil-2.webp')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Mobil 2</h4>
-                <p>Toyota Fortuner</p>
-                <a href="{{asset('welcome/img/portfolio/Mobil-2.webp')}}" title="Toyota Fortuner" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/portofolio-mobil" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-
-
-
-
-      </div><!-- End Portfolio Container -->
-
-      </div>
-
+            @foreach($armadas as $armada)
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ strtolower($armada->jenis_kendaraan->nama) }}">
+                    <div class="portfolio-content h-100">
+                        <img src="{{ Storage::url($armada->gambar) }}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{ $armada->merk }}</h4>
+                            <p>{{ $armada->deskripsi }}</p>
+                            <a href="{{ Storage::url($armada->gambar) }}" title="{{ $armada->merk }}" data-gallery="portfolio-gallery-{{ strtolower($armada->jenis_kendaraan->nama) }}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            <a href="{{ url('/detail-kendaraan', $armada->id) }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Portfolio Item -->
+            @endforeach
+        </div><!-- End Portfolio Container -->
     </div>
+</div>
+
 
   </section><!-- /Portfolio Section -->
 
