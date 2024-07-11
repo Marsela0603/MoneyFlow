@@ -24,7 +24,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               @endif
+
+              @auth
+              @if (Auth::user()->role == User::ROLE_ADMIN)
               <a href="{{ url('/dashboard/pembayaran/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah</a>
+              @endif
+              @endauth
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
