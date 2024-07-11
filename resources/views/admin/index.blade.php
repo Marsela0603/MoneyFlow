@@ -1,3 +1,4 @@
+@use(App\Models\User)
 <x-layout>
     <x-slot name="page_name">Dashboard</x-slot>
 
@@ -99,7 +100,28 @@
               </script>
 
             </div><!-- End row -->
+            @auth
+            @if (Auth::user()->role == User::ROLE_ADMIN)
+            <div class="row">
+              <div class="col-lg-12">
 
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Peminjaman</h5>
+                    <p>Total Peminjaman yang perlu dikonfirmasi:
+                    @if($totalPeminjamanPerluKonfirmasi > 0)
+                    <a href="/dashboard/peminjaman"><span class="badge bg-warning text-dark"> {{ $totalPeminjamanPerluKonfirmasi }} peminjaman perlu dikonfirmasi</span></a>
+                    @else
+                    <span class="badge bg-success">Tidak ada peminjaman yang perlu dikonfirmasi saat ini.</span>
+                    @endif
+.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            @endif
+            @endauth
         </section><!-- End section dashboard -->
     </x-slot><!-- End page content slot -->
 </x-layout><!-- End layout component -->
