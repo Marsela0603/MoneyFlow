@@ -71,6 +71,15 @@
         </form>
       </li><!-- End Login Page Nav -->
 
+      <li class="nav-heading">Back</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+          <i class="ri-arrow-left-circle-line"></i>
+          <span>Kembali ke landingpage</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+      
+
       <!-- End Blank Page Nav -->
 
     </ul>
