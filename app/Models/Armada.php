@@ -17,7 +17,8 @@ class Armada extends Model
         'kapasitas_kursi',
         'rating',
         'biaya',
-        'jenis_kendaraan_id'
+        'jenis_kendaraan_id',
+        'gambar'
     ];
     public $timestamps = false;
 

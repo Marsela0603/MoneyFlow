@@ -36,6 +36,7 @@
                     <th>Kapasitas Kursi</th>
                     <th>Biaya</th>
                     <th>Rating</th>
+                    <th>Gambar</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -49,19 +50,28 @@
                     <td>{{ $armada->biaya }}</td>
                     <td>{{ $armada->rating }}</td>
                     <td>
-                    <a href="{{ url('/dashboard/armada/show', $armada->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
-                    @auth
-                    @if (Auth::user()->role == User::ROLE_ADMIN)
-                    <a href="{{ url('/dashboard/armada/edit', $armada->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
-                    <form action="{{ url('dashboard/armada/destroy', $armada->id) }}" method="post">
-                      @csrf
-                      @method('delete')
-                      <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data {{ $armada->merk }}?')">
-                        <i class="ri-delete-bin-5-line"></i>
-                      </button>
-                    </form>
-                    @endif
-                    @endauth
+                        @if ($armada->gambar)
+                        <img src="{{ Storage::url($armada->gambar) }}" width="150px" alt="Gambar Armada">
+                        @else
+                        <span>Tidak Ada Gambar</span>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Actions">
+                            <a href="{{ url('/dashboard/armada/show', $armada->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                            @auth
+                            @if (Auth::user()->role == User::ROLE_ADMIN)
+                            <a href="{{ url('/dashboard/armada/edit', $armada->id) }}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
+                            <form action="{{ url('dashboard/armada/destroy', $armada->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data {{ $armada->merk }}?')">
+                                    <i class="ri-delete-bin-5-line"></i>
+                                </button>
+                            </form>
+                            @endif
+                            @endauth
+                        </div>
                     </td>
                   </tr>
                 @endforeach

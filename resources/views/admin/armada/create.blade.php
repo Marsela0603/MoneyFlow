@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h5 class="card-title">Form Armada</h5>
                 <!-- General Form Elements -->
-                <form action="{{ url('/dashboard/armada/store') }}" method="post">
+                <form action="{{ url('/dashboard/armada/store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row mb-3">
                         <label for="merk" class="col-sm-2 col-form-label">Nama Kendaraan</label>
@@ -65,6 +65,12 @@
                         <label for="rating" class="col-sm-2 col-form-label">Rating</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="gambar" name="gambar">
                         </div>
                     </div>
                     <div class="row mb-3">

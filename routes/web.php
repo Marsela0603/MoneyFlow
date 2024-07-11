@@ -9,10 +9,15 @@ use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\LandingpageController;
 
 
-Route::get('/', function () {
-    return view('landingpage.index');
+Route::get('/', [LandingpageController::class, 'index']);
+Route::get('/peminjaman', [LandingpageController::class, 'create']);
+
+// login untuk melakukan peminjaman
+Route::middleware('auth')->group(function () {
+    Route::post('/peminjaman/store', [LandingpageController::class, 'store']);
 });
 
 Route::get('/portofolio-bus', function () {
@@ -26,11 +31,6 @@ Route::get('/portofolio-minibus', function () {
 Route::get('/portofolio-mobil', function () {
     return view('landingpage.portofolio-mobil');
 });
-
-
-// Route::get('/dashboard', function () {
-//     return view('admin.index');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -75,9 +75,9 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [PeminjamanController::class, 'index']);
             Route::get('/show/{id}', [PeminjamanController::class, 'show']);
             Route::get('/create', [PeminjamanController::class, 'create']);
+            Route::post('/store', [PeminjamanController::class, 'store']);
             //hanya untuk admin
             Route::middleware('admin')->group(function () {
-            Route::post('/store', [PeminjamanController::class, 'store']);
             Route::get('/edit/{id}', [PeminjamanController::class, 'edit']);
             Route::put('/update/{id}', [PeminjamanController::class, 'update']);
             Route::delete('/destroy/{id}', [PeminjamanController::class, 'destroy']);

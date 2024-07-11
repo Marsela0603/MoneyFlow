@@ -48,7 +48,7 @@
                 <div class="row mb-3">
                     <label for="komentar_peminjam" class="col-sm-2 col-form-label">Komentar</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" id="komentar_peminjam" name="komentar_peminjam" required></textarea>
+                        <textarea class="form-control" id="komentar_peminjam" name="komentar_peminjam"></textarea>
                     </div>
                 </div>
 

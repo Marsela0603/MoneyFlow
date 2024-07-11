@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\jenis_kendaraan;
+use Illuminate\Support\Facades\Auth;
 
 class JKController extends Controller
 {

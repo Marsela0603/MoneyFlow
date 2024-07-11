@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Armada;
 use App\Models\jenis_kendaraan;
+use Illuminate\Support\Facades\Storage;
 
 class ArmadaController extends Controller
 {
@@ -29,8 +30,13 @@ class ArmadaController extends Controller
             'kapasitas_kursi' => 'required|int',
             'rating' => 'required|string|min:1|max:5',
             'biaya' => 'required|string',
-            'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id'
+            'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id',
+            'gambar' => 'required|image|max:2048'
         ]);
+
+        //menyimpan gambar
+        $gambarPath = $request->file('gambar')->store('public/armada');
+        $validated['gambar'] = $gambarPath;
 
         Armada::create($validated);
         return redirect('/dashboard/armada/')->with('pesan', 'Data Berhasil Ditambah');
@@ -60,10 +66,22 @@ class ArmadaController extends Controller
             'kapasitas_kursi' => 'required|int',
             'rating' => 'required|string|min:1|max:5',
             'biaya' => 'required|string',
-            'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id'
+            'jenis_kendaraan_id' => 'required|exists:jenis_kendaraan,id',
+            'gambar' => 'nullable|image|max:2048'
         ]);
 
         $armada = Armada::find($id);
+
+        // jika ada gambar baru di-upload, simpan gambar baru
+        if ($request->hasFile('gambar')) {
+            // hapus gambar lama jika ada
+            Storage::delete($armada->gambar);
+
+            // simpan gambar baru
+            $gambarPath = $request->file('gambar')->store('public/armada');
+            $validated['gambar'] = $gambarPath;
+        }
+
         $armada->update($validated);
 
         return redirect('dashboard/armada')->with('pesan', 'Data Berhasil Diperbarui');

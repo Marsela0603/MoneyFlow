@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('welcome/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('welcome/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('welcome/img/logo-velocar.png')}}" rel="icon">
+  <link href="{{asset('welcome/img/velocar-logo.png')}}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -73,6 +73,7 @@
             <li><a href="#portfolio">Galeri Kami</a></li>
             <li><a href="#team">Tim</a></li> 
             <li><a href="#contact">Kontak</a></li>
+            <li><a href="{{ url('/peminjaman') }}">Peminjaman</a></li>
             @if (Route::has('login'))
             @auth
             <a href="{{ url('/dashboard') }}" class="btn-login">Dashboard</a>
@@ -104,7 +105,7 @@
             <h1>Welcome to <span>Velocar</span></h1>
             <p>Kenyamanan disetiap Perjalanan</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Rental Sekarang</a>
+              <a href="{{ url('/peminjaman') }}" class="btn-get-started">Rental Sekarang</a>
             </div>
           </div>
         </div>
@@ -669,7 +670,6 @@
 
     </section><!-- /Team Section -->
 
-    
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">

@@ -13,7 +13,7 @@
                 <h5 class="card-title">Edit Form Armada</h5>
 
                 <!-- General Form Elements -->
-                <form action="{{ url('dashboard/armada/update', $armada->id) }}" method="post">
+                <form action="{{ url('dashboard/armada/update', $armada->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="row mb-3">
@@ -67,6 +67,12 @@
                         <label for="rating" class="col-sm-2 col-form-label">Rating</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" value="{{ $armada->rating }}" id="rating" name="rating" min="1" max="5" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" value="{{ $armada->gambar }} id="gambar" name="gambar">
                         </div>
                     </div>
                     <div class="row mb-3">
