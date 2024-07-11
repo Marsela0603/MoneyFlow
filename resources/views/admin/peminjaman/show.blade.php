@@ -23,38 +23,38 @@
                 <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>ID</th>
-                    <th>Nama</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nama</th>
                     @auth
                     @if (Auth::user()->role == User::ROLE_ADMIN)
-                    <th>NIK</th>
+                    <th class="text-center">NIK</th>
                     @endif
                     @endauth
-                    <th>Keperluan Pinjam</th>
-                    <th>Mulai</th>
-                    <th>Selesai</th>
-                    <th>Komentar</th>
-                    <th>Status</th>
-                    <th>Armada</th>
+                    <th class="text-center">Keperluan Pinjam</th>
+                    <th class="text-center">Mulai</th>
+                    <th class="text-center">Selesai</th>
+                    <th class="text-center">Komentar</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Armada</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>{{ $peminjaman->id }}</td>
-                    <td>{{ $peminjaman->nama_peminjam }}</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">{{ $peminjaman->id }}</td>
+                    <td class="text-center">{{ $peminjaman->nama_peminjam }}</td>
                     @auth
                     @if (Auth::user()->role == User::ROLE_ADMIN)
-                    <td>{{ $peminjaman->ktp_peminjam }}</td>
+                    <td class="text-center">{{ $peminjaman->ktp_peminjam }}</td>
                     @endif
                     @endauth
-                    <td>{{ $peminjaman->keperluan_pinjam }}</td>
-                    <td>{{ $peminjaman->mulai }}</td>
-                    <td>{{ $peminjaman->selesai }}</td>
-                    <td>{{ $peminjaman->komentar_peminjam }}</td>
-                    <td>{{ $peminjaman->status_pinjam }}</td>
-                    <td>{{ $peminjaman->armada->merk }}</td>
+                    <td class="text-center">{{ $peminjaman->keperluan_pinjam }}</td>
+                    <td class="text-center">{{ $peminjaman->mulai }}</td>
+                    <td class="text-center">{{ $peminjaman->selesai }}</td>
+                    <td class="text-center">{{ $peminjaman->komentar_peminjam }}</td>
+                    <td class="text-center">{{ $peminjaman->status_pinjam }}</td>
+                    <td class="text-center">{{ $peminjaman->armada->merk }}</td>
                   </tr>
                 </tbody>
               </table>

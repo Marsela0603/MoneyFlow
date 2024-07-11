@@ -30,19 +30,19 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Tanggal</th>
-                    <th>Jumlah Bayar</th>
-                    <th>Aksi</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Tanggal</th>
+                    <th class="text-center">Jumlah Bayar</th>
+                    <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                 @foreach ($pembayarans as $pembayaran)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $pembayaran->tanggal }}</td>
-                    <td>{{ $pembayaran->jumlah_bayar }}</td>
-                    <td>
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td class="text-center">{{ $pembayaran->tanggal }}</td>
+                    <td class="text-center">{{ $pembayaran->jumlah_bayar }}</td>
+                    <td class="text-center">
                     <div class="btn-group" role="group" aria-label="Actions">
                     <a href="{{ url('/dashboard/pembayaran/show', $pembayaran->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                     @auth

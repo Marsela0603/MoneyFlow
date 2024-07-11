@@ -22,20 +22,20 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>ID</th>
-                    <th>Tanggal</th>
-                    <th>Jumlah Bayar</th>
-                    <th>Nama Peminjam</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Tanggal</th>
+                    <th class="text-center">Jumlah Bayar</th>
+                    <th class="text-center">Nama Peminjam</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>{{ $pembayaran->id }}</td>
-                    <td>{{ $pembayaran->tanggal }}</td>
-                    <td>{{ $pembayaran->jumlah_bayar }}</td>
-                    <td>{{ $pembayaran->peminjaman->nama_peminjam }}</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">{{ $pembayaran->id }}</td>
+                    <td class="text-center">{{ $pembayaran->tanggal }}</td>
+                    <td class="text-center">{{ $pembayaran->jumlah_bayar }}</td>
+                    <td class="text-center">{{ $pembayaran->peminjaman->nama_peminjam }}</td>
                   </tr>
                 </tbody>
               </table>

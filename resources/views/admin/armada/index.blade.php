@@ -30,33 +30,33 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Nama Kendaraan</th>
-                    <th>Jenis Kendaraan</th>
-                    <th>Kapasitas Kursi</th>
-                    <th>Biaya</th>
-                    <th>Rating</th>
-                    <th>Gambar</th>
-                    <th>Aksi</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Nama Kendaraan</th>
+                    <th class="text-center">Jenis Kendaraan</th>
+                    <th class="text-center">Kapasitas Kursi</th>
+                    <th class="text-center">Biaya</th>
+                    <th class="text-center">Rating</th>
+                    <th class="text-center">Gambar</th>
+                    <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                 @foreach ($armadas as $armada)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $armada->merk }}</td>
-                    <td>{{ $armada->jenis_kendaraan->nama }}</td>
-                    <td>{{ $armada->kapasitas_kursi }}</td>
-                    <td>{{ $armada->biaya }}</td>
-                    <td>{{ $armada->rating }}</td>
-                    <td>
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td class="text-center">{{ $armada->merk }}</td>
+                    <td class="text-center">{{ $armada->jenis_kendaraan->nama }}</td>
+                    <td class="text-center">{{ $armada->kapasitas_kursi }}</td>
+                    <td class="text-center">{{ $armada->biaya }}</td>
+                    <td class="text-center">{{ $armada->rating }}</td>
+                    <td class="text-center">
                         @if ($armada->gambar)
                         <img src="{{ Storage::url($armada->gambar) }}" width="150px" alt="Gambar Armada">
                         @else
-                        <span>Tidak Ada Gambar</span>
+                        <span>Gambar belum tersedia</span>
                         @endif
                     </td>
-                    <td>
+                    <td class="text-center">
                         <div class="btn-group" role="group" aria-label="Actions">
                             <a href="{{ url('/dashboard/armada/show', $armada->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                             @auth

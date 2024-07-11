@@ -30,27 +30,35 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Mulai</th>
-                    <th>Selesai</th>
-                    <th>Komentar</th>
-                    <th>Status</th>
-                    <th>Armada</th>
-                    <th>Aksi</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Mulai</th>
+                    <th class="text-center">Selesai</th>
+                    <th class="text-center">Komentar</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Armada</th>
+                    <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($peminjamans as $peminjaman)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $peminjaman->nama_peminjam }}</td>
-                    <td>{{ $peminjaman->mulai }}</td>
-                    <td>{{ $peminjaman->selesai }}</td>
-                    <td>{{ $peminjaman->komentar_peminjam }}</td>
-                    <td>{{ $peminjaman->status_pinjam }}</td>
-                    <td>{{ $peminjaman->armada->merk }}</td>
-                    <td>
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td class="text-center">{{ $peminjaman->nama_peminjam }}</td>
+                    <td class="text-center">{{ $peminjaman->mulai }}</td>
+                    <td class="text-center">{{ $peminjaman->selesai }}</td>
+                    <td class="text-center">{{ $peminjaman->komentar_peminjam }}</td>
+                    <td class="text-center">
+                        @if ($peminjaman->status_pinjam == 'Berhasil diajukan')
+                            <span class="badge bg-success">Berhasil diajukan</span>
+                        @elseif ($peminjaman->status_pinjam == 'Sedang diajukan')
+                            <span class="badge bg-warning text-dark">Sedang diajukan</span>
+                        @else
+                            {{ $peminjaman->status_pinjam }}
+                        @endif
+                    </td>
+                    <td class="text-center">{{ $peminjaman->armada->merk }}</td>
+                    <td class="text-center">
                     <div class="btn-group" role="group" aria-label="Actions">
                     <a href="{{ url('/dashboard/peminjaman/show', $peminjaman->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                     @auth

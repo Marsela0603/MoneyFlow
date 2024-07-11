@@ -35,7 +35,7 @@ class LandingpageController extends Controller
         $validated['status_pinjam'] = 'Sedang diajukan';
         
         Peminjaman::create($validated);
-        return redirect('/peminjaman/')->with('pesan', 'Data Berhasil Ditambah');
+        return redirect('/peminjaman/')->with('pesan', 'Peminjaman sedang diajukan. Silahkan cek status peminjaman di dashboard peminjaman.');
     }
 
     public function show(string $id)

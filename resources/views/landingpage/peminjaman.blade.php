@@ -106,7 +106,12 @@
 </div><!-- End Section Title -->
 
 <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+  @if (session('pesan'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('pesan') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+  @endif
   <div class="row gy-4">
 
   <form action="{{ url('/peminjaman/store') }}" method="POST">

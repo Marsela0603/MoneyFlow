@@ -29,19 +29,19 @@
               <table class="table datable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Deskripsi</th>
-                    <th>Aksi</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Deskripsi</th>
+                    <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach ($jenis_kendaraans as $jk)
                   <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $jk->nama }}</td>
-                    <td>{{ $jk->deskripsi }}</td>
-                    <td>
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td class="text-center">{{ $jk->nama }}</td>
+                    <td class="text-center">{{ $jk->deskripsi }}</td>
+                    <td class="text-center">
                     <div class="btn-group" role="group" aria-label="Actions">
                     <a href="{{ url('/dashboard/jenis_kendaraan/show', $jk->id) }}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                     @auth

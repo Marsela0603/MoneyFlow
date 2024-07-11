@@ -22,18 +22,18 @@
               <table class="table datable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Deskripsi</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Deskripsi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>{{ $jenis_kendaraan->id }}</td>
-                    <td>{{ $jenis_kendaraan->nama }}</td>
-                    <td>{{ $jenis_kendaraan->deskripsi }}</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">{{ $jenis_kendaraan->id }}</td>
+                    <td class="text-center">{{ $jenis_kendaraan->nama }}</td>
+                    <td class="text-center">{{ $jenis_kendaraan->deskripsi }}</td>
                   </tr>
                 </tbody>
               </table>

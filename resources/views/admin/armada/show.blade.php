@@ -22,36 +22,36 @@
                <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>ID</th>
-                    <th>Nama Kendaraan</th>
-                    <th>No. Polisi</th>
-                    <th>Tahun Beli</th>
-                    <th>Deskripsi</th>
-                    <th>Jenis Kendaraan</th>
-                    <th>Kapasitas Kursi</th>
-                    <th>Biaya</th>
-                    <th>Rating</th>
-                    <th>Gambar</th>
+                    <th class="text-center">No</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nama Kendaraan</th>
+                    <th class="text-center">No. Polisi</th>
+                    <th class="text-center">Tahun Beli</th>
+                    <th class="text-center">Deskripsi</th>
+                    <th class="text-center">Jenis Kendaraan</th>
+                    <th class="text-center">Kapasitas Kursi</th>
+                    <th class="text-center">Biaya</th>
+                    <th class="text-center">Rating</th>
+                    <th class="text-center">Gambar</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>{{ $armada->id }}</td>
-                    <td>{{ $armada->merk }}</td>
-                    <td>{{ $armada->nopol }}</td>
-                    <td>{{ $armada->thn_beli }}</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">{{ $armada->id }}</td>
+                    <td class="text-center">{{ $armada->merk }}</td>
+                    <td class="text-center">{{ $armada->nopol }}</td>
+                    <td class="text-center">{{ $armada->thn_beli }}</td>
                     <td>{{ $armada->deskripsi }}</td>
-                    <td>{{ $armada->jenis_kendaraan->nama }}</td>
-                    <td>{{ $armada->kapasitas_kursi }}</td>
-                    <td>{{ $armada->biaya }}</td>
-                    <td>{{ $armada->rating }}</td>
-                    <td>
+                    <td class="text-center">{{ $armada->jenis_kendaraan->nama }}</td>
+                    <td class="text-center">{{ $armada->kapasitas_kursi }}</td>
+                    <td class="text-center">{{ $armada->biaya }}</td>
+                    <td class="text-center">{{ $armada->rating }}</td>
+                    <td class="text-center">
                         @if ($armada->gambar)
                         <img src="{{ Storage::url($armada->gambar) }}" width="150px" alt="Gambar Armada">
                         @else
-                        <span>Tidak Ada Gambar</span>
+                        <span>Gambar belum tersedia</span>
                         @endif
                     </td>
                   </tr>
