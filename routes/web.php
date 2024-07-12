@@ -21,18 +21,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/peminjaman/store', [LandingpageController::class, 'store']);
 });
 
-Route::get('/portofolio-bus', function () {
-    return view('landingpage.portofolio-bus');
-});
-
-Route::get('/portofolio-minibus', function () {
-    return view('landingpage.portofolio-minibus');
-});
-
-Route::get('/portofolio-mobil', function () {
-    return view('landingpage.portofolio-mobil');
-});
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

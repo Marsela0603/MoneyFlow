@@ -1,9 +1,9 @@
 <x-layout>
-    <x-slot name="page_name">Contact</x-slot>
+    <x-slot name="page_name">Kontak</x-slot>
 
     <x-slot name="navbar">
     <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-    <li class="breadcrumb-item active">Contact</li>
+    <li class="breadcrumb-item active">Kontak</li>
     </x-slot>
 
     <x-slot name="page_content">

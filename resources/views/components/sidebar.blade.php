@@ -50,14 +50,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/dashboard/profil">
           <i class="bi bi-person"></i>
-          <span>Profile</span>
+          <span>Profil</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/dashboard/contact">
           <i class="bi bi-envelope"></i>
-          <span>Contact</span>
+          <span>Kontak</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
