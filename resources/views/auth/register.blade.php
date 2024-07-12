@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="password_confirmation" class="form-label"  :value="__('Confirm Password')">Password</label>
+                      <label for="password_confirmation" class="form-label"  :value="__('Confirm Password')">Konfirmasi Password</label>
                       <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" required autocomplete="new-password">
                       <div class="invalid-feedback">Masukkan konfirmasi password!</div>
                     </div>
