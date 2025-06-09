@@ -4,33 +4,33 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Landing Page Rental Mobil</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MoneyFlow</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{{asset('welcome/img/logo-velocar.png')}}" rel="icon">
-  <link href="{{asset('welcome/img/velocar-logo.png')}}" rel="apple-touch-icon">
+<link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="icon">
+<link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{asset('welcome/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome/vendor/aos/aos.css" rel="stylesheet')}}">
-  <link href="{{asset('welcome/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css" rel="stylesheet') }}">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="{{asset('welcome/css/main.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/css/main.css')}}" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: BizLand
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Template Name: Invent
+  * Template URL: https://bootstrapmade.com/invent-bootstrap-business-template/
+  * Updated: May 12 2025 with Bootstrap v5.3.6
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
@@ -38,316 +38,376 @@
 
 <body class="index-page">
 
-  <header id="header" class="header sticky-top">
+ <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
 
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@velocar.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>(021)6519300</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div><!-- End Top Bar -->
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="{{ asset('assets/img/Logo-MoneyFlow-fulltext-icon-nobg.png') }}"  class="logo-header" alt="MoneyFlow Logo">
+        <span>.</span> 
+      </a>
 
-    <div class="branding d-flex align-items-cente">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how-we-work">Guide</a></li>
+          <li><a href="#services">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">Velocar</h1>
-        </a>
-
-        <nav id="navmenu" class="navmenu">
-          
-          <ul>
-            <li><a href="#hero" class="active">Beranda</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#services">Pelayanan</a></li>
-            <li><a href="#portfolio">Galeri Kami</a></li>
-            <li><a href="#team">Tim</a></li> 
-            <li><a href="#contact">Kontak</a></li>
-            <li><a href="{{ url('/peminjaman') }}">Peminjaman</a></li>
-            @if (Route::has('login'))
+      <div class="authentication">
+    @if (Route::has('login'))
+        <nav class="flex items-center justify-end gap-4">
             @auth
-            <a href="{{ url('/dashboard') }}" class="btn-login">Dashboard</a>
+                <a href="{{ url('/dashboard') }}" class="btn-getstarted">
+                    Dashboard
+                </a>
             @else
-            <a href="{{ route('login') }}" class="btn-login">Login</a>
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="btn-daftar">Register</a>
-            @endif
+                <a href="{{ route('login') }}" class="btn-getstarted">
+                    Log in
+                </a>
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="btn-getstarted">
+                        Register
+                    </a>
+                @endif
             @endauth
-            @endif
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+    @endif
+</div>
 
-      </div>
 
     </div>
-
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-  
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Welcome to <span>Velocar</span></h1>
-            <p>Kenyamanan disetiap Perjalanan</p>
-            <div class="d-flex">
-              <a href="{{ url('/peminjaman') }}" class="btn-get-started">Rental Sekarang</a>
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="badge-wrapper mb-3">
+              <div class="d-inline-flex align-items-center rounded-pill border border-accent-light">
+                <div class="icon-circle me-2">
+                  <i class="bi bi-bell"></i>
+                </div>
+                <span class="badge-text me-3">Innovative Solutions</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title mb-4"> Manage Your Finances with Confidence</h1>
+
+            <p class="hero-description mb-4">A simple and powerful tool to track income, expenses, and stay on top of your budget.</p>
+
+            <div class="cta-wrapper">
+              <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-image">
+              <img src="assets/img/illustration/illustration-16.webp" alt="Business Growth" class="img-fluid" loading="lazy">
             </div>
           </div>
         </div>
+
+        <div class="row feature-boxes">
+          <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Easy Financial Tracking</h3>
+                <p class="feature-text">Track your income and expenses effortlessly with a simple, user-friendly interface. Stay on top of your finances without the hassle.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title"> Data Privacy & Security</h3>
+                <p class="feature-text">Your financial data is encrypted and only accessible by you. We prioritize your privacy and confidentiality.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-bar-chart-line"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Insightful Reports</h3>
+                <p class="feature-text">Generate monthly and yearly reports to understand your spending patterns and manage your money smarter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </section><!-- /Hero Section -->
 
-   
-
     <!-- About Section -->
-    <section id="about" class="about section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Tentang Kami</h2>
-        <p><span>Kenali Lebih Dekat</span> <span class="description-title">Velocar</span></p>
-      </div><!-- End Section Title -->
+    <section id="about" class="about section">
 
       <div class="container">
-
-        <div class="row gy-3">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="{{asset('welcome/img/rental.jpg')}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-content ps-0 ps-lg-3">
-              <h3>Selamat Datang di Velocar</h3>
-              <p>Velocar adalah penyedia layanan rental mobil terpercaya yang berdedikasi untukmemberikan pengalaman berkendara yang nyaman dan aman. Kami menawarkanberbagai pilihan kendaraan yang terawat dengan baik untuk memenuhi kebutuhanperjalanan Anda, baik untuk bisnis maupun liburan.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
- <!-- Featured Services Section -->
- <section id="featured-services" class="featured-services section">
-
-  <div class="container">
-
-    <div class="row gy-4">
-
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-          <h4><a href="" class="stretched-link">VISI</a></h4>
-          <p>Menjadi penyedia layanan rental mobil terpercaya dan terbaik di Indonesia, dengan
-            mengutamakan kualitas, keamanan, dan kenyamanan bagi setiap pelanggan</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-          <h4><a href="" class="stretched-link">MISI</a></h4>
-          <p>1. Memberikan pelayanan yang ramah, profesional, dan responsif</p>
-          <p>2. Menyediakan armada mobil yang terawat dan berkualitas tinggi</p>
-          <p>3. Menyusun harga sewa yang kompetitif dan transparan</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-activity icon"></i></div>
-          <h4><a href="" class="stretched-link">Layanan Utama</a></h4>
-          <p>1. Sewa Mobil Harian</p>
-          <p>2. Sewa Mobil Bulanan</p>
-          <p>3. Sewa Mobil untuk Acara Khusus</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-          <h4><a href="" class="stretched-link">Tim Manajemen</a></h4>
-          <p>1. Marsela, CEO</p>
-          <p>2. Dzakiah Nur Aini, CFO</p>
-          <p>3. Swatu Sholat Asky, COO</p>
-          <p>4. Fajar Nurzaman, CMO</p>
-        </div>
-      </div><!-- End Service Item -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Featured Services Section -->  
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="333" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Pelanggan Puas</p>
-            </div>
-          </div><!-- End Stats Item -->
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p class="who-we-are">About Us</p>
+            <h3>Why Choose Our Personal Finance App?</h3>
+            <p class="fst-italic">
+              This application helps you take control of your financial life. Whether you're budgeting for groceries, tracking monthly income, or preparing reports, we've got you covered.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Easy-to-use interface.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Safe & secure data.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span> Works across all devices.</span></li>
+            </ul>
+          </div>
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="678" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Peminjaman</p>
+          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <div class="col-lg-6">
+                <img src="assets/img/about/about-portrait-1.webp" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6">
+                <div class="row gy-4">
+                  <div class="col-lg-12">
+                    <img src="assets/img/about/about-8.webp" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-lg-12">
+                    <img src="assets/img/about/about-12.webp" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
             </div>
-          </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Jam Terbang</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Karyawan</p>
-            </div>
-          </div><!-- End Stats Item -->
+          </div>
 
         </div>
 
       </div>
+    </section><!-- /About Section -->
 
-    </section><!-- /Stats Section -->
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work section">
 
-    <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How It Works</h2>
+        <p>Step-by-step guide to using our Personal Finance App:</p>
+      </div><!-- End Section Title -->
 
-      <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/HONDA.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/HYUNDAI.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/ISUZU.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/JEEP.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/MITSUBISHI.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/DAIHATSU.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/suzuki.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/toyota.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/LEXUS.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset('welcome/img/clients/MAZDA.png')}}" class="img-fluid" alt=""></div>
+        <div class="steps-5">
+          <div class="process-container">
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="content">
+                <span class="step-number">01</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-person-plus"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Create an Account</h3>
+                    <p>Sign up quickly with your email and password to get started.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="content">
+                <span class="step-number">02</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Log In Securely</h3>
+                    <p>Access your personal dashboard with protected login.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="content">
+                <span class="step-number">03</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-plus-circle"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Add Transactions</h3>
+                    <p>Record your income and expenses with just a few clicks.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="content">
+                <span class="step-number">04</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-wallet2"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Set Categories & Budgets</h3>
+                    <p>Organize your finances by labeling transactions and setting monthly limits.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="content">
+                <span class="step-number">05</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-speedometer2"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>View Your Dashboard</h3>
+                    <p>See an overview of your financial health with clear charts and summaries.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="content">
+                <span class="step-number">06</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-bar-chart-line"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Generate Reports</h3>
+                    <p>Get insights on your spending patterns monthly or yearly.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Clients Section -->
+    </section><!-- /How We Work Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Pelayanan</h2>
-        <p><span class="description-title">Pelayanan Prima</span></p>
-        <p>Untuk Setiap Perjalanan Anda</p>
+        <h2>Core Features That Empower Your Finances</h2>
+        <p>Discover powerful tools designed to help you manage, track, and grow your financial goals with ease.</p>
       </div><!-- End Section Title -->
 
-      <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row justify-content-center g-5">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
+          <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-graph-up"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Layanan Pengiriman Mobil</h3>
-              </a>
-              <p>Pengantaran mobil ke lokasi Anda untuk kenyamanan maksimal</p>
+              <div class="service-content">
+                <h3>Dashboard Overview</h3>
+                <p>Get a quick summary of your total income, expenses, and balance with insightful charts.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
+          <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-cash-stack"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Pemesanan Online</h3>
-              </a>
-              <p>Kemudahan pemesanan mobil secara onlinemelalui website kami</p>
+              <div class="service-content">
+                <h3>Income & Expense Tracking</h3>
+                <p>Easily record every transaction and categorize them for better clarity.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
+          <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-tags"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Layanan 24/7</h3>
-              </a>
-              <p>Dukungan dan bantuan pelanggan tersedia 24 jam sehari, 7 hari seminggu</p>
+              <div class="service-content">
+                <h3>Customizable Categories</h3>
+                <p>Create and manage your own income and expense categories based on your lifestyle.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
             </div>
           </div><!-- End Service Item -->
 
-          
+          <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-calendar-range"></i>
+              </div>
+              <div class="service-content">
+                <h3>Monthly & Yearly Reports</h3>
+                <p>View detailed financial reports to track your progress over time.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-right" data-aos-delay="300">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-bell-fill"></i>
+              </div>
+              <div class="service-content">
+                <h3>Budget Alerts & Reminders</h3>
+                <p>Set monthly spending limits and get alerts before you overspend.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <div class="service-content">
+                <h3>Secure Authentication</h3>
+                <p>Your data is safe with secure login, registration, and session management.</p>
+                <a href="#" class="service-link">
+                </a>
+              </div>
+            </div>
           </div><!-- End Service Item -->
 
         </div>
@@ -356,111 +416,343 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="{{asset('welcome/img/testimonials-bg.jpg')}}" class="testimonials-bg" alt="">
+    <!-- Services Alt Section -->
+    <section id="services-alt" class="services-alt section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
+
+      </div>
+
+    </section><!-- /Services Alt Section -->
+
+    <!-- Call To Action 2 Section -->
+    <section id="call-to-action-2" class="call-to-action-2 section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="cta-image-wrapper">
+              <img src="{{ asset('assets/img/img1.png') }}" alt="Call to Action" class="img-fluid rounded-4">
+              <div class="cta-pattern"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="cta-content">
+              <h2>Take Control of Your Personal Finances with MoneyFlow</h2>
+              <p class="lead">MoneyFlow helps you effortlessly track your income and expenses, view insightful summaries, and generate custom financial reports based on time or category. Manage your budget with clarity—anytime, anywhere.</p>
+
+              <div class="cta-features">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Monitor income and expenses in real-time</span>
+                </div>
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="450">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Monthly financial summaries and charts</span>
+                </div>
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Smart filters and customizable reports</span>
+                </div>
+              </div>
+
+              <div class="cta-action mt-5">
+                <a href="#" class="btn btn-primary btn-lg me-3">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action 2 Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="faq-contact-card">
+              <div class="card-icon">
+                <i class="bi bi-question-circle"></i>
+              </div>
+              <div class="card-content">
+                <h3>Still Have Questions?</h3>
+                <p>We're here to help! If you have any questions, feedback, or encounter any issues while using MoneyFlow, feel free to reach out to our support team. We’ll respond as quickly as possible to assist you.</p>
+                <div class="contact-options">
+                  <a href="#contact" class="contact-option">
+                    <i class="bi bi-envelope"></i>
+                    <span>Email Support</span>
+                  </a>
+                  <!-- <a href="#" class="contact-option">
+                    <i class="bi bi-chat-dots"></i>
+                    <span>Live Chat</span>
+                  </a> -->
+                  <a href="#contact" class="contact-option">
+                    <i class="bi bi-telephone"></i>
+                    <span>Call Us</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-accordion">
+              <div class="faq-item faq-active">
+                <div class="faq-header">
+                  <h3>What is MoneyFlow and what does it do?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    MoneyFlow is a personal finance management web application that helps you record and monitor your income and expenses, track your financial summaries, and generate reports based on time periods or categories.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="faq-header">
+                  <h3>How can I categorize my income and expenses?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    You can create custom categories for both income and expense transactions (e.g., Salary, Food, Transport) and manage them in the Categories section.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <h3>How do financial reports work in MoneyFlow?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    In the Reports section, you can view detailed monthly and yearly reports. You can also filter your transactions by month, year, or category.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <h3>Is there a way to set spending limits or budgets?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Yes. If the Budget Reminder feature is enabled, you can set a monthly expense limit. You’ll receive a notification when your expenses reach or exceed 80% of your set limit.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>et our users tell you how MoneyFlow made a difference.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="testimonials-slider swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "speed": 800,
               "autoplay": {
                 "delay": 5000
               },
-              "slidesPerView": "auto",
+              "slidesPerView": 1,
+              "spaceBetween": 30,
               "pagination": {
                 "el": ".swiper-pagination",
                 "type": "bullets",
                 "clickable": true
+              },
+              "breakpoints": {
+                "768": {
+                  "slidesPerView": 2
+                },
+                "1200": {
+                  "slidesPerView": 3
+                }
               }
             }
           </script>
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{asset('welcome/img/testimonials/testimonials-1.JPG')}}" class="testimonial-img" alt="">
-                <h3>Rossa</h3>
-                <h4>Pelanggan</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    MoneyFlow completely changed the way I manage my budget. I can now track every expense without stress.
+                  </p>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Velocar memudahkan perjalanan saya dengan mobil berkualitas dan layanan prima. Sangat puas!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-m-8.webp" alt="Profile Image">
+                    <div>
+                      <h3>Sarah M</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{asset('welcome/img/testimonials/testimonials-2.png')}}" class="testimonial-img" alt="">
-                <h3>Indah</h3>
-                <h4>Pelanggan</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    As a small business owner, this app helps me separate my personal and business finances easily. Love it!
+                  </p>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Pelayanan cepat dan mobilnya selalu dalam kondisi baik. Velocar top!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-f-3.webp" alt="Profile Image">
+                    <div>
+                      <h3>Lisa Williams</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{asset('welcome/img/testimonials/testimonials-3.JPG')}}" class="testimonial-img" alt="">
-                <h3>Haris</h3>
-                <h4>Pelanggan</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    I used to write down everything manually. MoneyFlow saves me time and helps me stay in control.
+                  </p>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Menyewa mobil di Velocar sangat mudah dan efisien. Sangat direkomendasikan!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-f-10.webp" alt="Profile Image">
+                    <div>
+                      <h3>Alina T</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{asset('welcome/img/testimonials/testimonials-4.JPG')}}" class="testimonial-img" alt="">
-                <h3>Rizky</h3>
-                <h4>Pelanggan</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    The monthly reports and visual graphs are super helpful. I can finally understand where my money goes.
+                  </p>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Harga terjangkau dan pilihan mobil banyak. Velocar tidak pernah mengecewakan!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-m-5.webp" alt="Profile Image">
+                    <div>
+                      <h3>David Miller</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{asset('welcome/img/testimonials/testimonials-5.png')}}" class="testimonial-img" alt="">
-                <h3>Hendri</h3>
-                <h4>Pelanggan</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    Setting a spending limit and getting alerts when I’m close to it really keeps me accountable.
+                  </p>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Pelayanan pelanggan Velocar sangat ramah dan profesional. Sewa mobil jadi menyenangkan!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-m-2.webp" alt="Profile Image">
+                    <div>
+                      <h3>Michael Davis</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End testimonial item -->
 
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    Simple, clean interface. I was able to get started in minutes. Highly recommended for personal finance.
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/person-f-7.webp" alt="Profile Image">
+                    <div>
+                      <h3>Sarah Thompson</h3>
+                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -469,283 +761,129 @@
 
     </section><!-- /Testimonials Section -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-   <!-- Portfolio Section -->
-   <section id="portfolio" class="portfolio section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Galeri Kami</h2>
-      <p>Lihat Galeri Kami</p>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            @foreach($armadas->unique('jenis_kendaraan_id') as $armada)
-                <li data-filter=".filter-{{ strtolower($armada->jenis_kendaraan->nama) }}">{{ $armada->jenis_kendaraan->nama }}</li>
-            @endforeach
-        </ul><!-- End Portfolio Filters -->
-
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            @foreach($armadas as $armada)
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ strtolower($armada->jenis_kendaraan->nama) }}">
-                    <div class="portfolio-content h-100">
-                        <img src="{{ Storage::url($armada->gambar) }}" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>{{ $armada->merk }}</h4>
-                            <p>{{ $armada->deskripsi }}</p>
-                            <a href="{{ Storage::url($armada->gambar) }}" title="{{ $armada->merk }}" data-gallery="portfolio-gallery-{{ strtolower($armada->jenis_kendaraan->nama) }}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="{{ url('/detail-kendaraan', $armada->id) }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div>
-                </div><!-- End Portfolio Item -->
-            @endforeach
-        </div><!-- End Portfolio Container -->
-    </div>
-</div>
-
-
-  </section><!-- /Portfolio Section -->
-
-
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Tim</h2>
-        <p><span>Tim Profesional</span> <span class="description-title">Kami</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{{asset('welcome/img/team/team-1.JPEG')}}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Marsela</h4>
-                <span>CEO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{{asset('welcome/img/team/team-2.jpg')}}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Dzakiah Nur Aini</h4>
-                <span>CFO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{{asset('welcome/img/team/team-3.JPG')}}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Swatu Sholat Asky</h4>
-                <span>COO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{{asset('welcome/img/team/team-4.jpg')}}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Fajar Nurzaman</h4>
-                <span>CMO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Kontak</h2>
-        <p><span>Butuh Bantuan?</span> <span class="description-title">Hubungi atau Kunjungi Kami !</span></p>
+        <h2>Contact</h2>
+        <p>Your insights matter! Let us know how we can improve your experience with MoneyFlow.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Alamat</h3>
-                  <p>Jalan Lenteng Agung Raya No.20, Kec.Jagakarsa, DKI Jakarta 12640</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Hubungi Kami</h3>
-                  <p>(021) 4759 603</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>contact@velocar.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3175618529776!2d106.83004867355626!3d-6.352919162148884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec6b07b68ea5%3A0x17da46bdf9308386!2sSTT%20Terpadu%20Nurul%20Fikri%20-%20Kampus%20B!5e0!3m2!1sid!2sid!4v1720531853877!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="row gy-4 mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <div class="icon-box">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h3>Our Address</h3>
+              <p>Jl. Setu Indah, No. 116, Jawa Barat</p>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Nama</label>
-                  <input type="text" name="name" id="name-field" class="form-control" placeholder="Masukkan nama anda" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" placeholder="Masukkan email anda" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" placeholder="Masukkan subjek" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Pesan</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" placeholder="Masukkan pesan" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Pesan Terkirim, Terima Kasih!</div>
-
-                  <button type="submit">Kirim</button>
-                </div>
-
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-card">
+              <div class="icon-box">
+                <i class="bi bi-telephone"></i>
               </div>
-            </form>
-          </div><!-- End Contact Form -->
+              <h3>Contact Number</h3>
+              <p>Phone: (021) 7863191</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-card">
+              <div class="icon-box">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <h3>Email Support</h3>
+              <p>Email: info@nurulfikri.ac.id</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
+                      <input type="text" name="name" class="form-control" placeholder="Your name*" required="">
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                      <input type="email" class="form-control" name="email" placeholder="Email address*" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-phone"></i></span>
+                      <input type="text" class="form-control" name="phone" placeholder="Phone number*" required="">
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-list"></i></span>
+                      <select name="subject" class="form-control" required="">
+                        <option value="">--Select service--</option>
+                        <option value="Service 1">Feedback</option>
+                        <option value="Service 2">Report a bug</option>
+                        <option value="Service 3">Request feature</option>
+                        <option value="Service 4">Support</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+                      <textarea class="form-control" name="message" rows="6" placeholder="Write a message*" required=""></textarea>
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit">Submit Message</button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
 
         </div>
 
       </div>
-
     </section><!-- /Contact Section -->
 
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Bergabunglah dengan Newsletter Kami</h4>
-            <p>Langganan newsletter kami dan terima berita terbaru tentang produk dan layanan kami!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Request untuk Subscribe Terkirim. Terima Kasih!</div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+  <footer id="footer" class="footer light-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="/" class="d-flex align-items-center">
-            <span class="sitename">Velocar</span>
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">MyWebsite</span>
           </a>
-          <div class="footer-contact pt-3">
-            <p>Jalan Lenteng Agung Raya No.20</p>
-            <p>Kec.Jagakarsa, DKI Jakarta 12640</p>
-            <p class="mt-3"><strong>No. Telepon :</strong> <span>(021) 4759 603</span></p>
-            <p><strong>Email :</strong> <span>contact@velocar.com</span></p>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#aboutus">Tentang Kami</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Pelayanan</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Pelayanan</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Bus</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Mobil</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Minibus</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12">
-          <h4>Ikuti Kami</h4>
-          <div class="social-links d-flex">
+          <div class="contact"><p>MoneyFlow helps you take control of your personal finances with ease. Record your income and expenses, monitor your spending habits, and get clear financial insights—all in one place. Stay organized and reach your financial goals faster with our simple and intuitive tools.</p></div>
+          <!-- <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div> -->
+          <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
@@ -753,17 +891,61 @@
           </div>
         </div>
 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Guide</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Hic solutasetp</h4>
+          <ul>
+            <li><a href="#">Molestiae accusamus iure</a></li>
+            <li><a href="#">Excepturi dignissimos</a></li>
+            <li><a href="#">Suscipit distinctio</a></li>
+            <li><a href="#">Dilecta</a></li>
+            <li><a href="#">Sit quas consectetur</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nobis illum</h4>
+          <ul>
+            <li><a href="#">Ipsam</a></li>
+            <li><a href="#">Laudantium dolorum</a></li>
+            <li><a href="#">Dinera</a></li>
+            <li><a href="#">Trodelas</a></li>
+            <li><a href="#">Flexo</a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Velocar</strong> <span>Pelayanan Prima untuk Setiap Perjalanan Anda</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Desain Oleh <a href="#">Tim Velocar</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
 
@@ -773,26 +955,19 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="{{asset('welcome/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('welcome/vendor/php-email-form/validate.js')}}"></script>
-  <script src="{{asset('welcome/vendor/aos/aos.js')}}"></script>
-  <script src="{{asset('welcome/vendor/glightbox/js/glightbox.min.js')}}"></script>
-  <script src="{{asset('welcome/vendor/waypoints/noframework.waypoints.js')}}"></script>
-  <script src="{{asset('welcome/vendor/purecounter/purecounter_vanilla.js')}}"></script>
-  <script src="{{asset('welcome/vendor/swiper/swiper-bundle.min.js')}}"></script>
-  <script src="{{asset('welcome/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-  <script src="{{asset('welcome/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
 
   <!-- Main JS File -->
-  <script src="{{asset('welcome/js/main.js')}}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 

@@ -11,53 +11,53 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="ri-car-line"></i><span>Kendaraan</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="ri-car-line"></i><span>Transactions</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/dashboard/jenis_kendaraan">
-              <i class="bi bi-circle"></i><span>Jenis Kendaraan</span>
+            <a href="/dashboard/transactions/income">
+              <i class="bi bi-circle"></i><span>Income</span>
             </a>
           </li>
           <li>
-            <a href="/dashboard/armada">
-              <i class="bi bi-circle"></i><span>Armada</span>
+            <a href="/dashboard/transactions/expense">
+              <i class="bi bi-circle"></i><span>Expenses</span>
             </a>
           </li>
         </ul>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bx bxs-credit-card"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/dashboard/peminjaman">
-              <i class="bi bi-circle"></i><span>Peminjaman</span>
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard/pembayaran">
-              <i class="bi bi-circle"></i><span>Pembayaran</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+  <a class="nav-link collapsed" href="/dashboard/categories">
+    <i class="bx bxs-credit-card"></i><span>Transaction Categories</span>
+  </a>
+</li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+  <a class="nav-link collapsed" href="/dashboard/reports">
+    <i class="bx bxs-credit-card"></i><span>Financial Reports</span>
+  </a>
+</li><!-- End Tables Nav -->
+      <li class="nav-item">
+  <a class="nav-link collapsed" href="/dashboard/budget">
+    <i class="bx bxs-credit-card"></i><span>Budget Reminder</span>
+  </a>
+</li><!-- End Tables Nav -->
+      
 
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/dashboard/profil">
+        <a class="nav-link collapsed" href="/dashboard/account">
           <i class="bi bi-person"></i>
-          <span>Profil</span>
+          <span>Account</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/dashboard/contact">
           <i class="bi bi-envelope"></i>
-          <span>Kontak</span>
+          <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
@@ -75,7 +75,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/">
           <i class="ri-arrow-left-circle-line"></i>
-          <span>Kembali ke landingpage</span>
+          <span>Back to landing page</span>
         </a>
       </li><!-- End Contact Page Nav -->
       

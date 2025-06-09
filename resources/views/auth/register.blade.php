@@ -1,150 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-guest-layout>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Register</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{{asset('admin/img/logo-velocar.png')}}" rel="icon">
-  <link href="{{asset('admin/img/velocar-logo.png')}}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('admin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/quill/quill.snow.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{asset('admin/vendor/simple-datatables/style.css')}}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <main>
-    <div class="container">
-
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-              <div class="d-flex justify-content-center py-4">
-                <a href="/" class="logo d-flex align-items-center w-auto">
-                  <img src="{{asset('admin/img/velocar-logo.png')}}" alt="">
-                  <span class="d-none d-lg-block">Velocar</span>
-                </a>
-              </div><!-- End Logo -->
-
-              <div class="card mb-3">
-
-                <div class="card-body">
-                <div class="pt-3 pb-0"> 
-                <a class="nav-link collapsed" href="/">
-                  <i class="ri-arrow-left-line"></i>
-                </a>
-                </div>
-
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Buat Akun</h5>
-                    <p class="text-center small">Masukkan data pribadi Anda untuk membuat akun</p>
-                  </div>
-
-                  <form method="POST" action="{{ route('register') }}" class="row g-3 needs-validation">
-                    @csrf
-                    <div class="col-12">
-                      <label for="name" class="form-label" :value="__('Name')">Nama</label>
-                      <input type="text" name="name" class="form-control" id="name" :value="old('name')" required autofocus autocomplete="name">
-                      <div class="invalid-feedback">Masukkan nama anda!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control" id="email" required autocomplete="username">
-                      <div class="invalid-feedback">Masukkan email anda!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="password" class="form-label" :value="__('Password')">Password</label>
-                      <input type="password" name="password" class="form-control" id="password" required autocomplete="new-password">
-                      <div class="invalid-feedback">Masukkan password anda!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="password_confirmation" class="form-label"  :value="__('Confirm Password')">Konfirmasi Password</label>
-                      <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" required autocomplete="new-password">
-                      <div class="invalid-feedback">Masukkan konfirmasi password!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">Saya setuju menerima <a href="#">syarat dan ketentuan</a></label>
-                        <div class="invalid-feedback">Anda harus menyetujui sebelum register</div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">{{ __('Register') }}</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">{{ __('Already registered?') }} <a href="{{ route('login') }}">Log in</a></p>
-                    </div>
-                  </form>
-
-                </div>
-              </div>
-
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="#">Velocar</a>
-              </div>
-
-            </div>
-          </div>
+        <!-- Name -->
+        <div>
+            <x-input-label for="name" :value="__('Name')" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-      </section>
+        <!-- Email Address -->
+        <div class="mt-4">
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
 
-    </div>
-  </main><!-- End #main -->
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset('admin/vendor/apexcharts/apexcharts.min.js')}}"></script>
-  <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('admin/vendor/chart.js/chart.umd.js')}}"></script>
-  <script src="{{asset('admin/vendor/echarts/echarts.min.js')}}"></script>
-  <script src="{{asset('admin/vendor/quill/quill.js')}}"></script>
-  <script src="{{asset('admin/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{asset('admin/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{asset('admin/vendor/php-email-form/validate.js')}}"></script>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
 
-  <!-- Template Main JS File -->
-  <script src="{{asset('admin/js/main.js')}}"></script>
+        <!-- Confirm Password -->
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-</body>
+            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                            type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
 
-</html>
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{ __('Already registered?') }}
+            </a>
+
+            <x-primary-button class="ms-4">
+                {{ __('Register') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>
