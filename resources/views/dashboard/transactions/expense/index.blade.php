@@ -47,12 +47,16 @@
                     <td>Rp {{ number_format($transaction->amount, 2, ',', '.') }}</td>
                     <td>
                       <div class="btn-group">
-                        <a href="#" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                        <form action="#" method="POST" onsubmit="return confirm('Yakin ingin hapus?')">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                        </form>
+                        <a href="{{ route('transactions.expense.edit', $transaction->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                        {{-- Tombol Delete --}}
+    <form action="{{ route('transactions.expense.destroy', $transaction->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+    </form>
+  </div>
+</td>
+
                       </div>
                     </td>
                   </tr>

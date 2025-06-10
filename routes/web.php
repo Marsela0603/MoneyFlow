@@ -27,10 +27,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/income', [TransactionController::class, 'income'])->name('transactions.income.index');
         Route::get('/income/create', [TransactionController::class, 'createIncome'])->name('transactions.income.create');
         Route::post('/income', [TransactionController::class, 'storeIncome'])->name('transactions.income.store');
-        
+        Route::get('/income/{id}/edit', [TransactionController::class, 'editIncome'])->name('transactions.income.edit');
+        Route::put('/income/{id}', [TransactionController::class, 'updateIncome'])->name('transactions.income.update');
+        Route::delete('/income/{id}', [TransactionController::class, 'destroyIncome'])->name('transactions.income.destroy');
+
         Route::get('/expense', [TransactionController::class, 'expense'])->name('transactions.expense.index');
         Route::get('/expense/create', [TransactionController::class, 'createExpense'])->name('transactions.expense.create');
         Route::post('/expense', [TransactionController::class, 'storeExpense'])->name('transactions.expense.store');
+        Route::get('/expense/{id}/edit', [TransactionController::class, 'editExpense'])->name('transactions.expense.edit');
+        Route::put('/expense/{id}', [TransactionController::class, 'updateExpense'])->name('transactions.expense.update');
+        Route::delete('/expense/{id}', [TransactionController::class, 'destroyExpense'])->name('transactions.expense.destroy');
+
+
     });
 });
 

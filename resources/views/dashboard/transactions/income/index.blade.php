@@ -1,4 +1,5 @@
 @use(App\Models\User)
+
 <x-layout>
     <x-slot name="page_name">Income Transactions</x-slot>
 
@@ -24,7 +25,9 @@
               </div>
               @endif
 
-              <a href="{{ route('transactions.income.create') }}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle"></i> Add Income</a>
+              <a href="{{ route('transactions.income.create') }}" class="btn btn-primary mb-3">
+                <i class="bi bi-plus-circle"></i> Add Income
+              </a>
 
               <table class="table datatable">
                 <thead>
@@ -32,7 +35,7 @@
                     <th>No</th>
                     <th>Date</th>
                     <th>Category</th>
-                    <th>description</th>
+                    <th>Description</th>
                     <th>Amount</th>
                     <th>Action</th>
                   </tr>
@@ -47,12 +50,20 @@
                     <td>Rp {{ number_format($transaction->amount, 2, ',', '.') }}</td>
                     <td>
                       <div class="btn-group">
-                        <a href="#" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                        <form action="#" method="POST" onsubmit="return confirm('Yakin ingin hapus?')">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                        </form>
+                        {{-- Tombol Edit --}}
+                        <a href="{{ route('transactions.income.edit', $transaction->id) }}" class="btn btn-warning btn-sm">
+                          <i class="bi bi-pencil"></i>
+                        </a>
+
+                         {{-- Tombol Delete --}}
+    <form action="{{ route('transactions.expense.destroy', $transaction->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+    </form>
+  </div>
+</td>
+
                       </div>
                     </td>
                   </tr>
