@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
-use App\Models\Category;  // Import Category model
+use App\Models\Category; 
+use App\Models\Budget; 
+use App\Models\Notification; 
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -24,9 +26,7 @@ class TransactionController extends Controller
 
     public function createIncome()
     {
-        // Ambil semua kategori untuk income
-         $categories = Category::where('type', 'income')->get(); // Anda bisa menyesuaikan ini jika ada filter tertentu
-
+        $categories = Category::where('type', 'income')->get();
         return view('dashboard.transactions.income.create', compact('categories'));
     }
 
@@ -52,54 +52,52 @@ class TransactionController extends Controller
     }
 
     public function editIncome($id)
-{
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', auth()->id())
-        ->where('type', 'income')
-        ->firstOrFail();
+    {
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->where('type', 'income')
+            ->firstOrFail();
 
-    $categories = Category::where('type', 'income')->get();
+        $categories = Category::where('type', 'income')->get();
 
-    return view('dashboard.transactions.income.edit', compact('transaction', 'categories'));
-}
+        return view('dashboard.transactions.income.edit', compact('transaction', 'categories'));
+    }
 
-public function updateIncome(Request $request, $id)
-{
-    $request->validate([
-        'category_id' => 'required|exists:categories,id',
-        'amount' => 'required|numeric|min:0',
-        'date' => 'required|date',
-        'description' => 'nullable|string',
-    ]);
+    public function updateIncome(Request $request, $id)
+    {
+        $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'amount' => 'required|numeric|min:0',
+            'date' => 'required|date',
+            'description' => 'nullable|string',
+        ]);
 
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', auth()->id())
-        ->where('type', 'income')
-        ->firstOrFail();
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->where('type', 'income')
+            ->firstOrFail();
 
-    $transaction->update([
-        'category_id' => $request->category_id,
-        'amount' => $request->amount,
-        'date' => $request->date,
-        'description' => $request->description,
-    ]);
+        $transaction->update([
+            'category_id' => $request->category_id,
+            'amount' => $request->amount,
+            'date' => $request->date,
+            'description' => $request->description,
+        ]);
 
-    return redirect()->route('transactions.income.index')->with('success', 'Income updated successfully!');
-}
+        return redirect()->route('transactions.income.index')->with('success', 'Income updated successfully!');
+    }
 
     public function destroyIncome($id)
     {
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('type', 'income')
-        ->firstOrFail();
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('type', 'income')
+            ->firstOrFail();
 
-    $transaction->delete();
+        $transaction->delete();
 
-    return redirect()->route('transactions.income.index')->with('success', 'Income deleted successfully!');
-}
-
-
+        return redirect()->route('transactions.income.index')->with('success', 'Income deleted successfully!');
+    }
 
     public function expense()
     {
@@ -114,7 +112,6 @@ public function updateIncome(Request $request, $id)
 
     public function createExpense()
     {
-        // Ambil semua kategori dengan tipe 'expense'
         $categories = Category::where('type', 'expense')->get();
         return view('dashboard.transactions.expense.create', compact('categories'));
     }
@@ -137,58 +134,86 @@ public function updateIncome(Request $request, $id)
             'type' => 'expense',
         ]);
 
+        // Ambil total pengeluaran user untuk bulan & tahun yang sama
+        $totalExpense = Transaction::where('user_id', Auth::id())
+            ->where('type', 'expense')
+            ->whereMonth('date', $request->date)
+            ->whereYear('date', $request->date)
+            ->sum('amount');
+
+        // Ambil budget user untuk bulan & tahun ini
+        $budget = Budget::where('user_id', Auth::id())
+            ->where('month', Carbon::parse($request->date)->format('F'))
+            ->where('year', Carbon::parse($request->date)->year)
+            ->first();
+
+        if ($budget) {
+            $limit = $budget->limit_amount;
+            $percentageUsed = ($totalExpense / $limit) * 100;
+
+            if ($percentageUsed >= 100) {
+                Notification::create([
+                    'user_id' => Auth::id(),
+                    'title' => 'Budget Exceeded!',
+                    'message' => 'You have exceeded your monthly budget.',
+                ]);
+            } elseif ($percentageUsed >= 90) {
+                Notification::create([
+                    'user_id' => Auth::id(),
+                    'title' => 'Almost Reaching Budget',
+                    'message' => 'You have used more than 90% of your monthly budget.',
+                ]);
+            }
+        }
+
         return redirect()->route('transactions.expense.index')->with('success', 'Expense added successfully!');
     }
 
-    
     public function editExpense($id)
-{
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('type', 'expense')
-        ->firstOrFail();
+    {
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('type', 'expense')
+            ->firstOrFail();
 
-    $categories = Category::where('type', 'expense')->get();
-    
+        $categories = Category::where('type', 'expense')->get();
 
-    return view('dashboard.transactions.expense.edit', compact('transaction', 'categories'));
-}
+        return view('dashboard.transactions.expense.edit', compact('transaction', 'categories'));
+    }
 
-public function updateExpense(Request $request, $id)
-{
-    $request->validate([
-        'category_id' => 'required|exists:categories,id',
-        'amount' => 'required|numeric|min:0',
-        'date' => 'required|date',
-        'description' => 'nullable|string',
-    ]);
+    public function updateExpense(Request $request, $id)
+    {
+        $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'amount' => 'required|numeric|min:0',
+            'date' => 'required|date',
+            'description' => 'nullable|string',
+        ]);
 
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('type', 'expense')
-        ->firstOrFail();
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('type', 'expense')
+            ->firstOrFail();
 
-    $transaction->update([
-        'category_id' => $request->category_id,
-        'amount' => $request->amount,
-        'date' => $request->date,
-        'description' => $request->description,
-    ]);
+        $transaction->update([
+            'category_id' => $request->category_id,
+            'amount' => $request->amount,
+            'date' => $request->date,
+            'description' => $request->description,
+        ]);
 
-    return redirect()->route('transactions.expense.index')->with('success', 'Expense updated successfully!');
-}
-public function destroyExpense($id)
-{
-    $transaction = Transaction::where('id', $id)
-        ->where('user_id', Auth::id())
-        ->where('type', 'expense')
-        ->firstOrFail();
+        return redirect()->route('transactions.expense.index')->with('success', 'Expense updated successfully!');
+    }
 
-    $transaction->delete();
+    public function destroyExpense($id)
+    {
+        $transaction = Transaction::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->where('type', 'expense')
+            ->firstOrFail();
 
-    return redirect()->route('transactions.expense.index')->with('success', 'Expense deleted successfully!');
-}
+        $transaction->delete();
 
-    
-
+        return redirect()->route('transactions.expense.index')->with('success', 'Expense deleted successfully!');
+    }
 }

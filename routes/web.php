@@ -8,6 +8,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BudgetController;
 
 // landing page
 Route::get('/', function () {
@@ -22,7 +23,17 @@ Route::prefix('/dashboard')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('dashboard/categories', CategoryController::class);
+
     
+Route::prefix('dashboard/budget')->middleware('auth')->group(function () {
+    Route::get('/', [BudgetController::class, 'index'])->name('dashboard.budget.index');
+    Route::get('/create', [BudgetController::class, 'create'])->name('dashboard.budgets.create');
+    Route::post('/store', [BudgetController::class, 'store'])->name('dashboard.budgets.store');
+    Route::delete('/{budget}', [BudgetController::class, 'destroy'])->name('dashboard.budget.destroy');
+});
+
+    
+
     Route::prefix('dashboard/transactions')->group(function () {
         Route::get('/income', [TransactionController::class, 'income'])->name('transactions.income.index');
         Route::get('/income/create', [TransactionController::class, 'createIncome'])->name('transactions.income.create');

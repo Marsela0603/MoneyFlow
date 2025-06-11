@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('budgets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('month', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
-            $table->integer('year');
-            $table->decimal('limit_amount', 10, 2);
+                $table->unsignedBigInteger('category_id')->after('user_id');
+                $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+                $table->enum('month', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+                $table->integer('year');
+                $table->decimal('limit_amount', 10, 2);
+                $table->enum('period', ['weekly', 'monthly'])->after('limit_amount');
             $table->timestamps();
         });
     }

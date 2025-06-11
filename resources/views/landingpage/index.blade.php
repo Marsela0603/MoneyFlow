@@ -42,8 +42,7 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="{{ asset('assets/img/Logo-MoneyFlow-fulltext-icon-nobg.png') }}"  class="logo-header" alt="MoneyFlow Logo">
-        <span>.</span> 
+        <img src="{{ asset('assets/img/Logo-MoneyFlow-fulltext-icon-nobg.png') }}"  class="logo-header" alt="MoneyFlow Logo" >
       </a>
 
       <nav id="navmenu" class="navmenu">
