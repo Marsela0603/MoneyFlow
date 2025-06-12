@@ -8,10 +8,19 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-
+      <li class="nav-item">
+  <a class="nav-link collapsed" href="/dashboard/reports">
+    <i class="bi-bar-chart"></i><span>Financial Reports</span>
+  </a>
+</li><!-- End Tables Nav -->
+  <li class="nav-item">
+  <a class="nav-link collapsed" href="/dashboard/categories">
+    <i class="bi-card-list"></i><span>Transaction Categories</span>
+  </a>
+</li><!-- End Tables Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="ri-car-line"></i><span>Transactions</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi-wallet2"></i><span>Transactions</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -27,20 +36,12 @@
         </ul>
       </li><!-- End Forms Nav -->
 
-      <li class="nav-item">
-  <a class="nav-link collapsed" href="/dashboard/categories">
-    <i class="bx bxs-credit-card"></i><span>Transaction Categories</span>
-  </a>
-</li><!-- End Tables Nav -->
+    
 
-      <li class="nav-item">
-  <a class="nav-link collapsed" href="/dashboard/reports">
-    <i class="bx bxs-credit-card"></i><span>Financial Reports</span>
-  </a>
-</li><!-- End Tables Nav -->
+      
       <li class="nav-item">
   <a class="nav-link collapsed" href="/dashboard/budget">
-    <i class="bx bxs-credit-card"></i><span>Budget Reminder</span>
+    <i class="bi-bell"></i><span>Budget Reminder</span>
   </a>
 </li><!-- End Tables Nav -->
       
@@ -56,14 +57,21 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/dashboard/contact">
-          <i class="bi bi-envelope"></i>
+          <i class="bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="/dashboard/contact">
+          <i class="bi-chat-dots"></i>
+          <span>Feedback</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
         <a class="nav-link collapsed" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-          <i class="bi bi-box-arrow-right"></i>
+          <i class="bi-box-arrow-right"></i>
           <span>{{ __('Logout') }}</span>
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -74,7 +82,7 @@
       <li class="nav-heading">Back</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="/">
-          <i class="ri-arrow-left-circle-line"></i>
+          <i class="bi-arrow-left-circle"></i>
           <span>Back to landing page</span>
         </a>
       </li><!-- End Contact Page Nav -->

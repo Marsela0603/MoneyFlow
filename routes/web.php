@@ -9,16 +9,30 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\NotificationController;
 
 // landing page
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('landingpage');
 
+
+
+// Menampilkan halaman notifikasi
+Route::get('/dashboard/notifications', [NotificationController::class, 'index'])
+    ->name('dashboard.notifications.index')
+    ->middleware('auth');
+
+// Menandai semua notifikasi sebagai telah dibaca
+Route::post('/dashboard/notifications/read-all', [NotificationController::class, 'readAll'])
+    ->name('dashboard.notifications.readAll')
+    ->middleware('auth');
+
 Route::prefix('/dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/contact', [ContactController::class, 'index']);
     Route::get('/account', [AccountController::class, 'index']);
+    Route::get('/reports', [ReportController::class, 'index']);
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -253,8 +253,8 @@
                     <i class="bi bi-plus-circle"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Add Transactions</h3>
-                    <p>Record your income and expenses with just a few clicks.</p>
+                    <h3>Set Categories & Budgets</h3>
+                    <p>Organize your finances by labeling transactions and setting monthly limits.</p>
                   </div>
                 </div>
               </div>
@@ -268,8 +268,8 @@
                     <i class="bi bi-wallet2"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Set Categories & Budgets</h3>
-                    <p>Organize your finances by labeling transactions and setting monthly limits.</p>
+                    <h3>Add Transactions</h3>
+                    <p>Record your income and expenses with just a few clicks.</p>
                   </div>
                 </div>
               </div>

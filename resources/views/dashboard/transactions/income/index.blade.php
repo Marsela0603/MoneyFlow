@@ -56,7 +56,7 @@
                         </a>
 
                          {{-- Tombol Delete --}}
-    <form action="{{ route('transactions.expense.destroy', $transaction->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+    <form action="{{ route('transactions.income.destroy', $transaction->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
       @csrf
       @method('DELETE')
       <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>

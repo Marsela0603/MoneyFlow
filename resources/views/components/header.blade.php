@@ -39,7 +39,7 @@
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
           <li class="dropdown-header">
             You have {{ $unreadNotificationCount ?? 0 }} new notification{{ ($unreadNotificationCount ?? 0) > 1 ? 's' : '' }}
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            <a href="{{ route('dashboard.notifications.index') }}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
           </li>
           <li><hr class="dropdown-divider"></li>
 

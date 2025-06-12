@@ -24,19 +24,13 @@ class Budget extends Model
 
     public function isExceeded()
     {
-        $query = Transaction::where('user_id', $this->user_id)
-            ->where('type', 'expense')
-            ->where('category_id', $this->category_id);
+        $totalExpenses = $this->category
+            ->transactions()
+            ->where('user_id', $this->user_id)
+            ->whereMonth('date', date('m', strtotime($this->month)))
+            ->whereYear('date', $this->year)
+            ->sum('amount');
 
-        if ($this->period === 'monthly') {
-            $query->whereMonth('date', date('m', strtotime($this->month)))
-                  ->whereYear('date', $this->year);
-        } elseif ($this->period === 'weekly') {
-            $weekStart = now()->startOfWeek();
-            $weekEnd = now()->endOfWeek();
-            $query->whereBetween('date', [$weekStart, $weekEnd]);
-        }
-
-        return $query->sum('amount') >= $this->limit_amount;
+        return $totalExpenses > $this->limit_amount;
     }
 }

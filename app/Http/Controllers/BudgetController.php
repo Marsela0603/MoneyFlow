@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Budget;
 use App\Models\Category;
+use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 
 class BudgetController extends Controller
@@ -13,6 +14,23 @@ class BudgetController extends Controller
     {
         $categories = Category::where('user_id', Auth::id())->where('type', 'expense')->get();
         $reminders = Budget::where('user_id', Auth::id())->with('category')->get();
+
+        foreach ($reminders as $reminder) {
+            if ($reminder->isExceeded()) {
+                $existing = Notification::where('user_id', Auth::id())
+                    ->where('title', 'Budget Exceeded')
+                    ->where('message', 'Pengeluaran kategori ' . $reminder->category->name . ' melebihi batas!')
+                    ->first();
+
+                if (!$existing) {
+                    Notification::create([
+                        'user_id' => Auth::id(),
+                        'title' => 'Budget Exceeded',
+                        'message' => 'Pengeluaran kategori ' . $reminder->category->name . ' melebihi batas!',
+                    ]);
+                }
+            }
+        }
 
         return view('dashboard.budgets.index', compact('categories', 'reminders'));
     }
