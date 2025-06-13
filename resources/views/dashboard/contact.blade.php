@@ -45,35 +45,34 @@
 
         <div class="col-xl-6">
           <div class="card p-4">
-            <form action="forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
+            <form action="{{ route('testimoni.store') }}" method="POST">
+    @csrf
+    <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Nama" required>
-                </div>
+        <div class="col-md-6">
+            <input type="text" name="nama" class="form-control" placeholder="Name" required>
+        </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
-                </div>
+        <div class="col-md-6">
+            <select name="rating" class="form-control" required>
+                <option value="">-- Choose Rating --</option>
+                @for ($i = 1; $i <= 5; $i++)
+                    <option value="{{ $i }}">{{ $i }} ⭐</option>
+                @endfor
+            </select>
+        </div>
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subjek" placeholder="Subject" required>
-                </div>
+        <div class="col-md-12">
+            <textarea class="form-control" name="description" rows="4" placeholder="Write your feedback or comments." required></textarea>
+        </div>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required></textarea>
-                </div>
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-primary">Submit Form</button>
+        </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+    </div>
+</form>
 
-                  <button type="submit">Kirim</button>
-                </div>
-
-              </div>
-            </form>
           </div>
 
         </div>

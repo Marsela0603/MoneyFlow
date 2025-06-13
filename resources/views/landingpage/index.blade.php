@@ -253,8 +253,8 @@
                     <i class="bi bi-plus-circle"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Set Categories & Budgets</h3>
-                    <p>Organize your finances by labeling transactions and setting monthly limits.</p>
+                    <h3>View Your Dashboard</h3>
+                    <p>See an overview of your financial health with clear charts and summaries.</p>
                   </div>
                 </div>
               </div>
@@ -268,8 +268,8 @@
                     <i class="bi bi-wallet2"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Add Transactions</h3>
-                    <p>Record your income and expenses with just a few clicks.</p>
+                    <h3>Set Categories & Budgets</h3>
+                    <p>Organize your finances by labeling transactions and setting monthly limits.</p>
                   </div>
                 </div>
               </div>
@@ -283,8 +283,8 @@
                     <i class="bi bi-speedometer2"></i>
                   </div>
                   <div class="step-content">
-                    <h3>View Your Dashboard</h3>
-                    <p>See an overview of your financial health with clear charts and summaries.</p>
+                    <h3>Add Transactions</h3>
+                    <p>Record your income and expenses with just a few clicks.</p>
                   </div>
                 </div>
               </div>
@@ -801,65 +801,6 @@
               <p>Email: info@nurulfikri.ac.id</p>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-person"></i></span>
-                      <input type="text" name="name" class="form-control" placeholder="Your name*" required="">
-                    </div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Email address*" required="">
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                      <input type="text" class="form-control" name="phone" placeholder="Phone number*" required="">
-                    </div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-list"></i></span>
-                      <select name="subject" class="form-control" required="">
-                        <option value="">--Select service--</option>
-                        <option value="Service 1">Feedback</option>
-                        <option value="Service 2">Report a bug</option>
-                        <option value="Service 3">Request feature</option>
-                        <option value="Service 4">Support</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
-                      <textarea class="form-control" name="message" rows="6" placeholder="Write a message*" required=""></textarea>
-                    </div>
-                  </div>
-                  <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit">Submit Message</button>
-                  </div>
-
-                </div>
-              </form>
-            </div>
-          </div>
-
         </div>
 
       </div>

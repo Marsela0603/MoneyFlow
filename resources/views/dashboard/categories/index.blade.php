@@ -33,7 +33,7 @@
               @endif
 
               @auth
-              <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle"></i> Add Category</a>
+              <a href="{{ route('dashboard.categories.create') }}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle"></i> Add Category</a>
               @endauth
 
               <table class="table datatable">
@@ -59,8 +59,8 @@
                     </td>
                     <td class="text-center">
                       <div class="btn-group" role="group" aria-label="Aksi">
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm"><i class="bx bx-edit"></i></a>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-warning btn-sm"><i class="bx bx-edit"></i></a>
+                        <form action="{{ route('dashboard.categories.destroy', $category->id) }}" method="POST" style="display:inline;">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm"

@@ -1,8 +1,8 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
-<link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="icon">
-<link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="apple-touch-icon">
+<link type="image/x-icon"href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="icon">
+<link type="image/x-icon"href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="icon">
   <div class="d-flex align-items-center justify-content-between">
     <a href="/dashboard" class="logo d-flex align-items-center">
       {{-- <img src="{{ asset('assets/img/Logo-MoneyFlow.png') }}" alt="Logo MoneyFlow"> --}}
