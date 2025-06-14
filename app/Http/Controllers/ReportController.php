@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use Carbon\Carbon;
+use App\Models\Category;
 
 class ReportController extends Controller
 {
@@ -144,11 +145,38 @@ class ReportController extends Controller
             }
         }
 
+        // Hitung total pengeluaran di periode yang dipilih
+$totalExpenseForRange = Transaction::where('user_id', $userId)
+    ->where('type', 'expense')
+    ->tap($dateFilter)
+    ->sum('amount');
+
+// Persentase pengeluaran per kategori
+$categoryExpenses = Category::with(['transactions' => function ($query) use ($userId, $dateFilter) {
+    $query->where('user_id', $userId)->where('type', 'expense')->tap($dateFilter);
+}])->get()
+->map(function ($category) use ($totalExpenseForRange) {
+    $sum = $category->transactions->sum('amount');
+
+    if ($sum <= 0) return null; // Skip kategori yang tidak punya pengeluaran
+
+    $percentage = $totalExpenseForRange > 0 ? round(($sum / $totalExpenseForRange) * 100, 1) : 0;
+    return [
+        'name' => $category->name,
+        'amount' => $sum,
+        'percentage' => $percentage
+    ];
+})
+->filter() // hapus hasil null
+->sortByDesc('percentage')
+->values();
+
+
         return view('dashboard.reports.index', compact(
             'todayTransactions', 'thisMonthIncome', 'thisMonthExpense',
             'transactionGrowth', 'incomeGrowth', 'expenseGrowth',
             'transactionsCount', 'incomeSum', 'expenseSum', 'range',
-            'chartLabels', 'incomeSeries', 'expenseSeries', 'transactionSeries'
+            'chartLabels', 'incomeSeries', 'expenseSeries', 'transactionSeries', 'categoryExpenses'
         ));
     }
 }

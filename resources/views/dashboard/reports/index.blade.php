@@ -69,9 +69,9 @@
                       <h6>Filter</h6>
                     </li>
 
-                    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'today']) }}">Today</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
+                    <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'today']) }}">Today</a></li>
+                  <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'month']) }}">This Month</a></li>
+                  <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'year']) }}">This Year</a></li>
                   </ul>
                 </div>
 
@@ -111,10 +111,10 @@
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
+                    <a class="dropdown-item" href="{{ route('reports.index', ['range' => 'week']) }}">This Week</a>
+                    <a class="dropdown-item" href="{{ route('reports.index', ['range' => 'month']) }}">This Month</a>
+                    <a class="dropdown-item" href="{{ route('reports.index', ['range' => 'year']) }}">This Year</a>
 
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'today']) }}">Today</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
 
                   </ul>
                 </div>
@@ -175,9 +175,9 @@
     <li class="dropdown-header text-start">
       <h6>Filter</h6>
     </li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'week']) }}">This Week</a></li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
+    <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'week']) }}">This Week</a></li>
+    <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'month']) }}">This Month</a></li>
+    <li><a class="dropdown-item" href="{{ route('reports.index', ['range' => 'year']) }}">This Year</a></li>
   </ul>
 </div>
 
@@ -226,6 +226,34 @@
 
           </div>
         </div><!-- End Left side columns -->
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5>Rangkuman Laporan ({{ ucfirst($range) }})</h5>
+      <p><strong>Total Income:</strong> Rp {{ number_format($incomeSum, 0, ',', '.') }}</p>
+      <p><strong>Total Expense:</strong> Rp {{ number_format($expenseSum, 0, ',', '.') }}</p>
+    </div>
+  </div>
+
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Kategori Pengeluaran</h5>
+
+      @foreach ($categoryExpenses as $cat)
+        <div class="d-flex justify-content-between">
+          <span>{{ $cat['name'] }}</span>
+          <span>Rp {{ number_format($cat['amount'], 0, ',', '.') }} ({{ $cat['percentage'] }}%)</span>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $cat['percentage'] }}%;" aria-valuenow="{{ $cat['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      @endforeach
+
+    </div>
+  </div>
+</div>
 
 
       </div>

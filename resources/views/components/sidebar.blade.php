@@ -66,12 +66,6 @@
         </a>
       </li><!-- End Contact Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/dashboard/contact">
-          <i class="bi-chat-dots"></i>
-          <span>Feedback</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">

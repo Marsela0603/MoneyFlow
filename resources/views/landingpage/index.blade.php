@@ -565,7 +565,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
-        <p>et our users tell you how MoneyFlow made a difference.</p>
+        <p>Let our users tell you how MoneyFlow made a difference.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -596,164 +596,33 @@
             }
           </script>
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    MoneyFlow completely changed the way I manage my budget. I can now track every expense without stress.
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-m-8.webp" alt="Profile Image">
-                    <div>
-                      <h3>Sarah M</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    As a small business owner, this app helps me separate my personal and business finances easily. Love it!
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-f-3.webp" alt="Profile Image">
-                    <div>
-                      <h3>Lisa Williams</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    I used to write down everything manually. MoneyFlow saves me time and helps me stay in control.
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-f-10.webp" alt="Profile Image">
-                    <div>
-                      <h3>Alina T</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    The monthly reports and visual graphs are super helpful. I can finally understand where my money goes.
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-m-5.webp" alt="Profile Image">
-                    <div>
-                      <h3>David Miller</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    Setting a spending limit and getting alerts when I’m close to it really keeps me accountable.
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-m-2.webp" alt="Profile Image">
-                    <div>
-                      <h3>Michael Davis</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    Simple, clean interface. I was able to get started in minutes. Highly recommended for personal finance.
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="assets/img/person/person-f-7.webp" alt="Profile Image">
-                    <div>
-                      <h3>Sarah Thompson</h3>
-                   
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+    @foreach ($testimonials as $testi)
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>
+              <i class="bi bi-quote quote-icon"></i>
+              {{ $testi->description }}
+            </p>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="testimonial-profile">
+            <div class="rating">
+              @for ($i = 1; $i <= 5; $i++)
+                <i class="bi {{ $i <= $testi->rating ? 'bi-star-fill' : 'bi-star' }}"></i>
+              @endfor
+            </div>
+            <div class="profile-info">
+              <img src="{{ asset('assets/img/person/person-f-3.webp') }}" alt="Profile Image">
+              <div>
+                <h3>{{ $testi->nama }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End testimonial item -->
+    @endforeach
+</div>
+
         </div>
 
       </div>
@@ -808,88 +677,30 @@
 
   </main>
 
-  <footer id="footer" class="footer light-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">MyWebsite</span>
-          </a>
-          <div class="contact"><p>MoneyFlow helps you take control of your personal finances with ease. Record your income and expenses, monitor your spending habits, and get clear financial insights—all in one place. Stay organized and reach your financial goals faster with our simple and intuitive tools.</p></div>
-          <!-- <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div> -->
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Guide</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
+ <footer id="footer" class="footer bg-light text-center py-5">
+  <div class="container">
+    <a href="index.html" class="d-inline-flex align-items-center justify-content-center mb-3 text-decoration-none">
+      <span class="sitename fw-bold fs-4 text-primary">MoneyFlow</span>
+    </a>
+    <p class="mx-auto text-muted" style="max-width: 600px;">
+      MoneyFlow helps you take control of your personal finances with ease. Record your income and expenses, monitor your spending habits, and get clear financial insights—all in one place. Stay organized and reach your financial goals faster with our simple and intuitive tools.
+    </p>
+    
+    <div class="social-links d-flex justify-content-center gap-3 mt-3">
+      <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
+    <p class="mt-4 mb-0 text-muted">
+      &copy; <strong>MyWebsite</strong> All Rights Reserved
+    </p>
+    <small class="text-muted">
+      Designed by <a href="https://bootstrapmade.com/" class="text-decoration-none">BootstrapMade</a>
+    </small>
+  </div>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

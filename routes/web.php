@@ -11,15 +11,15 @@ use App\Http\Controllers\{
     ReportController,
     BudgetController,
     NotificationController,
-    TestimoniController
+    TestimoniController,
+    LandingPageController
 };
 
 // =========================
 // Landing Page
 // =========================
-Route::get('/', function () {
-    return view('landingpage.index');
-})->name('landingpage');
+
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
 
 // =========================
 // Authenticated Routes
