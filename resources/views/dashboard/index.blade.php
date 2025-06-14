@@ -7,228 +7,150 @@
     </x-slot>
 
     <x-slot name="page_content">
-
     <section class="section dashboard">
       <div class="row">
 
-        <!-- Left side columns -->
+        <!-- Summary Cards -->
         <div class="col-lg-12">
           <div class="row">
 
-            <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Total Transactions <span>| Today</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>{{ $todayTransactions }}</h6>
-@if (!is_null($transactionGrowth))
-    <span class="{{ $transactionGrowth >= 0 ? 'text-success' : 'text-danger' }} small pt-1 fw-bold">
-        {{ round($transactionGrowth) }}%
-    </span>
-    <span class="text-muted small pt-2 ps-1">
-        {{ $transactionGrowth >= 0 ? 'increase' : 'decrease' }}
-    </span>
-@endif
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Sales Card -->
-
-            <!-- Revenue Card -->
+            <!-- Total Income -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'today']) }}">Today</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
-                  </ul>
-                </div>
-
                 <div class="card-body">
-                  <h5 class="card-title">Total Income<span>| This Month</span></h5>
-
+                  <h5 class="card-title">Total Pemasukan</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <i class="bi bi-arrow-down-circle"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>Rp {{ number_format($thisMonthIncome, 0, ',', '.') }}</h6>
-@if (!is_null($incomeGrowth))
-    <span class="{{ $incomeGrowth >= 0 ? 'text-success' : 'text-danger' }} small pt-1 fw-bold">
-        {{ round($incomeGrowth) }}%
-    </span>
-    <span class="text-muted small pt-2 ps-1">
-        {{ $incomeGrowth >= 0 ? 'increase' : 'decrease' }}
-    </span>
-@endif
-
+                      <h6>Rp {{ number_format($totalIncome, 0, ',', '.') }}</h6>
                     </div>
                   </div>
                 </div>
-
               </div>
-            </div><!-- End Revenue Card -->
+            </div>
 
-            <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
+            <!-- Total Expense -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+                <div class="card-body">
+                  <h5 class="card-title">Total Pengeluaran</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-arrow-up-circle"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>Rp {{ number_format($totalExpense, 0, ',', '.') }}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- Current Balance -->
+            <div class="col-xxl-4 col-md-6">
               <div class="card info-card customers-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'today']) }}">Today</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-                  <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
-
-                  </ul>
-                </div>
-
                 <div class="card-body">
-                  <h5 class="card-title">Total Expense<span>| This Month</span></h5>
-
+                  <h5 class="card-title">Sisa Saldo Saat Ini</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                      <i class="bi bi-wallet2"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>Rp {{ number_format($thisMonthExpense, 0, ',', '.') }}</h6>
-@if (!is_null($expenseGrowth))
-    <span class="{{ $expenseGrowth >= 0 ? 'text-success' : 'text-danger' }} small pt-1 fw-bold">
-        {{ round($expenseGrowth) }}%
-    </span>
-    <span class="text-muted small pt-2 ps-1">
-        {{ $expenseGrowth >= 0 ? 'increase' : 'decrease' }}
-    </span>
-@endif
-
-
+                      <h6>Rp {{ number_format($currentBalance, 0, ',', '.') }}</h6>
                     </div>
                   </div>
-
                 </div>
               </div>
-
-            </div><!-- End Customers Card -->
-
-            <!-- Reports -->
-            <div class="col-12">
-              <div class="card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Reports <span>| {{ ucfirst($range) }}</span></h5>
-
-                  <!-- Line Chart -->
-                  <div id="reportsChart"></div>
-
-                 <div class="filter">
-  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-    <li class="dropdown-header text-start">
-      <h6>Filter</h6>
-    </li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'week']) }}">This Week</a></li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'month']) }}">This Month</a></li>
-    <li><a class="dropdown-item" href="{{ route('dashboard', ['range' => 'year']) }}">This Year</a></li>
-  </ul>
-</div>
-
-<div class="card-body">
-  
-  <div id="reportsChart"></div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      new ApexCharts(document.querySelector("#reportsChart"), {
-        series: [
-          { name: 'Total Transactions', data: @json($transactionSeries) },
-          { name: 'Income', data: @json($incomeSeries) },
-          { name: 'Expense', data: @json($expenseSeries) }
-        ],
-        chart: { height: 350, type: 'area', toolbar: { show: false } },
-        xaxis: { categories: @json($chartLabels) },
-        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-        stroke: { curve: 'smooth', width: 2 },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.3,
-            opacityTo: 0.4,
-            stops: [0, 90, 100]
-          }
-        },
-        dataLabels: { enabled: false },
-        markers: { size: 4 },
-        tooltip: { x: { show: true } }
-      }).render();
-    });
-  </script>
-</div>
-
-
-                  <!-- End Line Chart -->
-
-                </div>
-
-              </div>
-            </div><!-- End Reports -->
-
-      
+            </div>
 
           </div>
-        </div><!-- End Left side columns -->
+        </div>
 
+        <!-- Chart & Notifikasi -->
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body pt-3">
+              <h5 class="card-title">Komposisi Pemasukan vs Pengeluaran</h5>
+              <div id="pieChart"></div>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new ApexCharts(document.querySelector("#pieChart"), {
+                    series: [{{ $totalExpense }}, {{ $totalIncome }}],
+                    chart: {
+                      type: 'pie',
+                      height: 300
+                    },
+                    labels: ['Pengeluaran', 'Pemasukan'],
+                    colors: ['#ff5b5b', '#28a745']
+                  }).render();
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body pt-3">
+              <h5 class="card-title">Notifikasi & Pengingat</h5>
+              <ul>
+                <li>🎯 Budget Bulanan: Rp {{ number_format($budgetTarget, 0, ',', '.') }} – Terpakai: {{ $budgetUsedPercent }}%</li>
+                @foreach ($notifications as $note)
+                    <li>🔔 {{ $note }}</li>
+                @endforeach
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaksi Terbaru -->
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <h5 class="card-title">Transaksi Terbaru</h5>
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Deskripsi</th>
+                    <th>Nominal</th>
+                    <th>Tanggal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tbody>
+  @foreach ($recentTransactions as $index => $trx)
+  <tr>
+    <td>{{ $index + 1 }}</td>
+    <td>{{ $trx->category->name ?? '-' }}</td> {{-- Ganti deskripsi ke nama kategori --}}
+    <td>Rp {{ number_format($trx->amount, 0, ',', '.') }}</td>
+    <td>{{ \Carbon\Carbon::parse($trx->date)->format('d M Y') }}</td>
+  </tr>
+  @endforeach
+</tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body pt-3">
+              <h5 class="card-title">Quick Actions</h5>
+              <a href="{{ route('transactions.income.create') }}" class="btn btn-success me-2">+ Pemasukan</a>
+              <a href="{{ route('transactions.expense.create') }}" class="btn btn-danger me-2">+ Pengeluaran</a>
+              <a href="{{ route('dashboard.categories.create') }}" class="btn btn-secondary me-2">+ Tambah Kategori</a>
+              <a href="{{ route('reports.index') }}" class="btn btn-success">📊 Buat Laporan</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
-
-    </x-slot><!-- End page content slot -->
-</x-layout><!-- End layout component -->
+    </x-slot>
+</x-layout>

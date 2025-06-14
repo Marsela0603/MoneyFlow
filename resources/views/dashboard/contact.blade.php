@@ -45,7 +45,14 @@
 
         <div class="col-xl-6">
           <div class="card p-4">
-            <form action="{{ route('testimoni.store') }}" method="POST">
+            {{-- ALERT SUCCESS --}}
+    @if(session('success'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+            <form action="{{ route('contact.store') }}" method="POST">
     @csrf
     <div class="row gy-4">
 

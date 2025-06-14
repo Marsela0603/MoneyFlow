@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
         // Contact & Account
         Route::get('/contact', [ContactController::class, 'index'])->name('dashboard.contact');
-        Route::post('/contact', [TestimoniController::class, 'store'])->name('testimoni.store');
+        Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 
         Route::get('/account', [AccountController::class, 'index'])->name('dashboard.account');
