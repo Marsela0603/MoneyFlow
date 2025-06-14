@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('admin/img/logo-velocar.png')}}" rel="icon">
-  <link href="{{asset('admin/img/velocar-logo.png')}}" rel="apple-touch-icon">
+  <link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="icon">
+<link href="{{ asset('assets/img/Logo_MoneyFlow.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -25,6 +25,7 @@
   <link href="{{asset('admin/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
   <link href="{{asset('admin/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{asset('admin/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+  
 
   <!-- Template Main CSS File -->
   <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">

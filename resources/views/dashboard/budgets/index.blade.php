@@ -12,6 +12,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Budget Reminders</h5>
+                            <p class="text-muted">
+    This table shows your active monthly budget limits by category. Monitor which budgets are on track and which have been exceeded, so you can manage your expenses more effectively.
+</p>
 
                             @if (session('success'))
                                 <div class="alert alert-success">{{ session('success') }}</div>

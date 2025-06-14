@@ -18,7 +18,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
                 <div class="card-body">
-                  <h5 class="card-title">Total Pemasukan</h5>
+                  <h5 class="card-title">Total Income</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-arrow-down-circle"></i>
@@ -35,7 +35,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title">Total Pengeluaran</h5>
+                  <h5 class="card-title">Total Expense</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-arrow-up-circle"></i>
@@ -52,7 +52,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card customers-card">
                 <div class="card-body">
-                  <h5 class="card-title">Sisa Saldo Saat Ini</h5>
+                  <h5 class="card-title">Current Balance</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-wallet2"></i>
@@ -68,11 +68,11 @@
           </div>
         </div>
 
-        <!-- Chart & Notifikasi -->
+        <!-- Chart & Notifications -->
         <div class="col-lg-8">
           <div class="card">
             <div class="card-body pt-3">
-              <h5 class="card-title">Komposisi Pemasukan vs Pengeluaran</h5>
+              <h5 class="card-title">Income vs Expense Composition</h5>
               <div id="pieChart"></div>
               <script>
                 document.addEventListener("DOMContentLoaded", () => {
@@ -82,7 +82,7 @@
                       type: 'pie',
                       height: 300
                     },
-                    labels: ['Pengeluaran', 'Pemasukan'],
+                    labels: ['Expense', 'Income'],
                     colors: ['#ff5b5b', '#28a745']
                   }).render();
                 });
@@ -94,9 +94,9 @@
         <div class="col-lg-4">
           <div class="card">
             <div class="card-body pt-3">
-              <h5 class="card-title">Notifikasi & Pengingat</h5>
+              <h5 class="card-title">Notifications & Reminders</h5>
               <ul>
-                <li>🎯 Budget Bulanan: Rp {{ number_format($budgetTarget, 0, ',', '.') }} – Terpakai: {{ $budgetUsedPercent }}%</li>
+                <li>🎯 Monthly Budget: Rp {{ number_format($budgetTarget, 0, ',', '.') }} – Used: {{ $budgetUsedPercent }}%</li>
                 @foreach ($notifications as $note)
                     <li>🔔 {{ $note }}</li>
                 @endforeach
@@ -105,33 +105,30 @@
           </div>
         </div>
 
-        <!-- Transaksi Terbaru -->
+        <!-- Recent Transactions -->
         <div class="col-12">
           <div class="card recent-sales overflow-auto">
             <div class="card-body">
-              <h5 class="card-title">Transaksi Terbaru</h5>
+              <h5 class="card-title">Recent Transactions</h5>
               <table class="table table-borderless">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Deskripsi</th>
-                    <th>Nominal</th>
-                    <th>Tanggal</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tbody>
   @foreach ($recentTransactions as $index => $trx)
   <tr>
     <td>{{ $index + 1 }}</td>
-    <td>{{ $trx->category->name ?? '-' }}</td> {{-- Ganti deskripsi ke nama kategori --}}
+    <td>{{ $trx->category->name ?? '-' }}</td> {{-- Replace with category name --}}
     <td>Rp {{ number_format($trx->amount, 0, ',', '.') }}</td>
     <td>{{ \Carbon\Carbon::parse($trx->date)->format('d M Y') }}</td>
   </tr>
   @endforeach
 </tbody>
-
-                </tbody>
               </table>
             </div>
           </div>
@@ -142,10 +139,10 @@
           <div class="card">
             <div class="card-body pt-3">
               <h5 class="card-title">Quick Actions</h5>
-              <a href="{{ route('transactions.income.create') }}" class="btn btn-success me-2">+ Pemasukan</a>
-              <a href="{{ route('transactions.expense.create') }}" class="btn btn-danger me-2">+ Pengeluaran</a>
-              <a href="{{ route('dashboard.categories.create') }}" class="btn btn-secondary me-2">+ Tambah Kategori</a>
-              <a href="{{ route('reports.index') }}" class="btn btn-success">📊 Buat Laporan</a>
+              <a href="{{ route('transactions.income.create') }}" class="btn btn-success me-2">+ Add Income</a>
+              <a href="{{ route('transactions.expense.create') }}" class="btn btn-danger me-2">+ Add Expense</a>
+              <a href="{{ route('dashboard.categories.create') }}" class="btn btn-secondary me-2">+ Add Category</a>
+              <a href="{{ route('reports.index') }}" class="btn btn-success">📊 Generate Report</a>
             </div>
           </div>
         </div>

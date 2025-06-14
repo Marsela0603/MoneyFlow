@@ -4,7 +4,7 @@
 
     <x-slot name="navbar">
         <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Category</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dashboard.categories.index') }}">Category</a></li>
         <li class="breadcrumb-item active">Edit Category</li>
     </x-slot>
 
@@ -17,7 +17,7 @@
             <div class="card-body">
               <h5 class="card-title">Edit Category Form</h5>
 
-              <form action="{{ route('categories.update', $category->id) }}" method="POST">
+              <form action="{{ route('dashboard.categories.update', $category->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -41,7 +41,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Update</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-secondary">Cancel</a>
+                <a href="{{ route('dashboard.categories.index') }}" class="btn btn-secondary">Cancel</a>
               </form>
 
             </div>

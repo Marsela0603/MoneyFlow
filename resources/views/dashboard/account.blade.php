@@ -36,7 +36,7 @@
               <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Detail Profil</button>
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Detail Profile</button>
                 </li>
 
               </ul>
@@ -44,10 +44,10 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
-                  <h5 class="card-title">Detail Profil</h5>
+                  <h5 class="card-title">Detail Profile</h5>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Nama Lengkap</div>
+                    <div class="col-lg-3 col-md-4 label ">Name</div>
                     <div class="col-lg-9 col-md-8">{{ Auth::user()->name ?? '' }}</div>
                   </div>
                   <br>
@@ -55,12 +55,6 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
                     <div class="col-lg-9 col-md-8">{{ Auth::user()->email ?? '' }}</div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Role</div>
-                    <div class="col-lg-9 col-md-8">{{ Auth::user()->role ?? '' }}</div>
                   </div>
                   <br>
 

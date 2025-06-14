@@ -230,7 +230,7 @@
 <div class="row">
   <div class="col-md-6">
     <div class="card p-3">
-      <h5>Rangkuman Laporan ({{ ucfirst($range) }})</h5>
+      <h5>Report Summary  ({{ ucfirst($range) }})</h5>
       <p><strong>Total Income:</strong> Rp {{ number_format($incomeSum, 0, ',', '.') }}</p>
       <p><strong>Total Expense:</strong> Rp {{ number_format($expenseSum, 0, ',', '.') }}</p>
     </div>
@@ -239,7 +239,7 @@
 <div class="col-md-6">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Kategori Pengeluaran</h5>
+      <h5 class="card-title">Expence Category</h5>
 
       @foreach ($categoryExpenses as $cat)
         <div class="d-flex justify-content-between">

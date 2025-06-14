@@ -19,14 +19,14 @@ class BudgetController extends Controller
             if ($reminder->isExceeded()) {
                 $existing = Notification::where('user_id', Auth::id())
                     ->where('title', 'Budget Exceeded')
-                    ->where('message', 'Pengeluaran kategori ' . $reminder->category->name . ' melebihi batas!')
+                    ->where('message', 'Your' . $reminder->category->name . ' category spending is over the limit!')
                     ->first();
 
                 if (!$existing) {
                     Notification::create([
                         'user_id' => Auth::id(),
                         'title' => 'Budget Exceeded',
-                        'message' => 'Pengeluaran kategori ' . $reminder->category->name . ' melebihi batas!',
+                        'message' => 'Your' . $reminder->category->name . ' category spending is over the limit!',
                     ]);
                 }
             }
