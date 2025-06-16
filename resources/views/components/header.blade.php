@@ -80,12 +80,6 @@
           </li>
           <li><hr class="dropdown-divider"></li>
 
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="/profile">
-              <i class="bi bi-person"></i>
-              <span>Profil</span>
-            </a>
-          </li>
           <li><hr class="dropdown-divider"></li>
 
           <li>
