@@ -1,19 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{
-    ProfileController,
-    DashboardController,
-    ContactController,
-    AccountController,
-    TransactionController,
-    CategoryController,
-    ReportController,
-    BudgetController,
-    NotificationController,
-    TestimoniController,
-    LandingPageController
-};
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\LandingPageController;
 
 // =========================
 // Landing Page
@@ -33,7 +31,6 @@ Route::middleware('auth')->group(function () {
         // Contact & Account
         Route::get('/contact', [ContactController::class, 'index'])->name('dashboard.contact');
         Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
 
         Route::get('/account', [AccountController::class, 'index'])->name('dashboard.account');
 
