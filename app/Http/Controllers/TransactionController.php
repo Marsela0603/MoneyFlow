@@ -10,7 +10,6 @@ use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
-
 class TransactionController extends Controller
 {
     public function income()
@@ -26,7 +25,7 @@ class TransactionController extends Controller
 
     public function createIncome()
     {
-        $categories = Category::where('type', 'income')->get();
+        $categories = Category::where('type', 'income')->where('user_id', Auth::id())->get();
         return view('dashboard.transactions.income.create', compact('categories'));
     }
 
@@ -58,7 +57,7 @@ class TransactionController extends Controller
             ->where('type', 'income')
             ->firstOrFail();
 
-        $categories = Category::where('type', 'income')->get();
+        $categories = Category::where('type', 'income')->where('user_id', Auth::id())->get();
 
         return view('dashboard.transactions.income.edit', compact('transaction', 'categories'));
     }
@@ -112,7 +111,7 @@ class TransactionController extends Controller
 
     public function createExpense()
     {
-        $categories = Category::where('type', 'expense')->get();
+        $categories = Category::where('type', 'expense')->where('user_id', Auth::id())->get();
         return view('dashboard.transactions.expense.create', compact('categories'));
     }
 
@@ -134,14 +133,14 @@ class TransactionController extends Controller
             'type' => 'expense',
         ]);
 
-        // Ambil total pengeluaran user untuk bulan & tahun yang sama
+        // Hitung total pengeluaran bulan ini
         $totalExpense = Transaction::where('user_id', Auth::id())
             ->where('type', 'expense')
             ->whereMonth('date', $request->date)
             ->whereYear('date', $request->date)
             ->sum('amount');
 
-        // Ambil budget user untuk bulan & tahun ini
+        // Cek apakah user punya budget untuk bulan ini
         $budget = Budget::where('user_id', Auth::id())
             ->where('month', Carbon::parse($request->date)->format('F'))
             ->where('year', Carbon::parse($request->date)->year)
@@ -176,7 +175,7 @@ class TransactionController extends Controller
             ->where('type', 'expense')
             ->firstOrFail();
 
-        $categories = Category::where('type', 'expense')->get();
+        $categories = Category::where('type', 'expense')->where('user_id', Auth::id())->get();
 
         return view('dashboard.transactions.expense.edit', compact('transaction', 'categories'));
     }

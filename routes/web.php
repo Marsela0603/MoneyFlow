@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [BudgetController::class, 'index'])->name('dashboard.budget.index');
             Route::get('/create', [BudgetController::class, 'create'])->name('dashboard.budgets.create');
             Route::post('/store', [BudgetController::class, 'store'])->name('dashboard.budgets.store');
+            Route::get('/{budget}/edit', [BudgetController::class, 'edit'])->name('dashboard.budget.edit');
+            Route::put('/{budget}', [BudgetController::class, 'update'])->name('dashboard.budget.update');
             Route::delete('/{budget}', [BudgetController::class, 'destroy'])->name('dashboard.budget.destroy');
         });
 

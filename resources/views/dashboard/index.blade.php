@@ -69,7 +69,7 @@
         </div>
 
         <!-- Chart & Notifications -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="card">
             <div class="card-body pt-3">
               <h5 class="card-title">Income vs Expense Composition</h5>
@@ -91,19 +91,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4">
-          <div class="card">
-            <div class="card-body pt-3">
-              <h5 class="card-title">Notifications & Reminders</h5>
-              <ul>
-                <li>🎯 Monthly Budget: Rp {{ number_format($budgetTarget, 0, ',', '.') }} – Used: {{ $budgetUsedPercent }}%</li>
-                @foreach ($notifications as $note)
-                    <li>🔔 {{ $note }}</li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-        </div>
+        
 
         <!-- Recent Transactions -->
         <div class="col-12">

@@ -48,12 +48,14 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <form action="{{ route('dashboard.budget.destroy', $reminder->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete reminder for {{ $reminder->category->name }}?')">Delete</button>
-                                                </form>
-                                            </td>
+    <a href="{{ route('dashboard.budget.edit', $reminder->id) }}" class="btn btn-warning btn-sm"><i class="bx bx-edit"></i></a>
+    <form action="{{ route('dashboard.budget.destroy', $reminder->id) }}" method="POST" class="d-inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete reminder for {{ $reminder->category->name }}?')"><i class="ri-delete-bin-5-line"></i></button>
+    </form>
+</td>
+
                                         </tr>
                                     @empty
                                         <tr>

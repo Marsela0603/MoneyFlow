@@ -59,6 +59,36 @@ class BudgetController extends Controller
         return redirect()->route('dashboard.budget.index')->with('success', 'Budget reminder created successfully.');
     }
 
+    public function edit(Budget $budget)
+{
+    if ($budget->user_id !== Auth::id()) {
+        abort(403);
+    }
+
+    $categories = Category::where('user_id', Auth::id())->where('type', 'expense')->get();
+    return view('dashboard.budgets.edit', compact('budget', 'categories'));
+}
+
+public function update(Request $request, Budget $budget)
+{
+    if ($budget->user_id !== Auth::id()) {
+        abort(403);
+    }
+
+    $request->validate([
+        'category_id' => 'required|exists:categories,id',
+        'limit_amount' => 'required|numeric|min:0',
+        'period' => 'required|in:monthly,weekly',
+        'month' => 'required|in:January,February,March,April,May,June,July,August,September,October,November,December',
+        'year' => 'required|integer|min:2000|max:' . (date('Y') + 10),
+    ]);
+
+    $budget->update($request->only(['category_id', 'limit_amount', 'period', 'month', 'year']));
+
+    return redirect()->route('dashboard.budget.index')->with('success', 'Budget reminder updated successfully.');
+}
+
+
     public function destroy(Budget $budget)
     {
         if ($budget->user_id !== Auth::id()) {
